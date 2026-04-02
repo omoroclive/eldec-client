@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from '../assets/logo/eldec-logo.jpg';
+import logo from '../assets/logo/eldec-logo.png';
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },

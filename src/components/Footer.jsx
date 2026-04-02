@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from '../assets/logo/eldec-logo.jpg'
+import logo from '../assets/logo/eldec-logo.png'
 
 const quickLinks = [
   { label: "Home", to: "/" },
