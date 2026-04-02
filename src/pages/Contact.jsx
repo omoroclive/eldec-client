@@ -42,7 +42,7 @@ const contactDetails = [
       </svg>
     ),
     label: "Office Location",
-    value: "Nairobi, Kenya",
+    value: "5th Floor Room 5A, Timschack House, Ngong Road, Dagoretti",
     sub: "Serving clients across Africa & the Middle East",
     link: null,
   },
@@ -53,7 +53,7 @@ const contactDetails = [
       </svg>
     ),
     label: "Email Address",
-    value: "info@eldeclimited.com",
+    value: "design.eldec@gmail.com",
     sub: "We respond within 24 hours",
     link: "mailto:info@eldeclimited.com",
   },
@@ -64,9 +64,9 @@ const contactDetails = [
       </svg>
     ),
     label: "Phone Number",
-    value: "+254 700 000 000",
+    value: "+254 721 387 121",
     sub: "Mon – Fri, 8:00 AM – 6:00 PM EAT",
-    link: "tel:+254700000000",
+    link: "tel:+254 721 387 121",
   },
   {
     icon: (
