@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-
+import logo from '../assets/logo/eldec-logo.jpg';
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
@@ -39,7 +39,7 @@ export default function Navbar() {
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-3 group">
             <img
-              src="/eldec-logo.png"
+              src={logo}
               alt="ELDEC Limited"
               className="h-10 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-105"
             />

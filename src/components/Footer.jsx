@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from '../assets/logo/eldec-logo.jpg'
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -43,7 +44,7 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div className="lg:col-span-1">
             <img
-              src="/eldec-logo.png"
+              src={logo}
               alt="ELDEC Limited"
               className="h-12 w-auto brightness-0 invert mb-5"
             />
