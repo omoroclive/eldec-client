@@ -108,7 +108,7 @@ export default function Footer() {
                   </svg>
                 </span>
                 <span className="font-body text-white/60 text-sm leading-relaxed">
-                  Nairobi, Kenya
+                  5th Floor Room 5A, Timschack House, Ngong Road, Dagoretti
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -122,7 +122,7 @@ export default function Footer() {
                   href="mailto:info@eldeclimited.com"
                   className="font-body text-white/60 text-sm hover:text-white transition-colors duration-300"
                 >
-                  info@eldeclimited.com
+                  design.eldec@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -133,10 +133,10 @@ export default function Footer() {
                   </svg>
                 </span>
                 <a
-                  href="tel:+254700000000"
+                  href="tel:+254 721 387 121"
                   className="font-body text-white/60 text-sm hover:text-white transition-colors duration-300"
                 >
-                  +254 700 000 000
+                  +254 721 387 121
                 </a>
               </li>
             </ul>
