@@ -39,11 +39,10 @@ export default function Navbar() {
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-3 group">
             <img
-              src={logo}
-              alt="ELDEC Limited"
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
-
-            />
+  src={logo}
+  alt="ELDEC Limited"
+  className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-lighten"
+/>
           </NavLink>
 
           {/* Desktop nav */}

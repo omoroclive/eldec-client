@@ -43,12 +43,11 @@ export default function Footer() {
 
           {/* Col 1 — Brand */}
           <div className="lg:col-span-1">
-            <img
-              src={logo}
-              alt="ELDEC Limited"
-              className="h-14 w-auto mb-5"
-
-            />
+          <img
+  src={logo}
+  alt="ELDEC Limited"
+  className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-lighten"
+/>
             <p className="font-body text-white/60 text-sm leading-relaxed mb-6">
               Professional electrical engineering services — design, consultancy,
               installation and supervision across Africa and beyond.
