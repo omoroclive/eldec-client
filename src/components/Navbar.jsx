@@ -41,7 +41,8 @@ export default function Navbar() {
             <img
               src={logo}
               alt="ELDEC Limited"
-              className="h-10 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-105"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+
             />
           </NavLink>
 

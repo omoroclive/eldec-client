@@ -46,7 +46,8 @@ export default function Footer() {
             <img
               src={logo}
               alt="ELDEC Limited"
-              className="h-12 w-auto brightness-0 invert mb-5"
+              className="h-14 w-auto mb-5"
+
             />
             <p className="font-body text-white/60 text-sm leading-relaxed mb-6">
               Professional electrical engineering services — design, consultancy,
