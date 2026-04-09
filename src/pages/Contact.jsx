@@ -1,6 +1,5 @@
-  import { useEffect, useRef, useState } from "react";
-  import emailjs from "@emailjs/browser";
-  
+import { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 /* ── in-view hook ── */
 function useInView(threshold = 0.12) {
@@ -58,7 +57,6 @@ const contactDetails = [
       </svg>
     ),
     label: "Email Address",
-
     value: "designs@eldecengineering.com",
     sub: "designs.eldec@gmail.com",
     link: "mailto:designs@eldecengineering.com",
@@ -72,7 +70,7 @@ const contactDetails = [
     label: "Phone Number",
     value: "+254 721 387 121",
     sub: "Mon – Fri, 8:00 AM – 6:00 PM EAT",
-    link: "tel:+254 721 387 121",
+    link: "tel:+254721387121",
   },
   {
     icon: (
@@ -109,7 +107,7 @@ const initialForm = {
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -129,75 +127,56 @@ export default function Contact() {
     if (errors[name]) setErrors((er) => ({ ...er, [name]: "" }));
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const errs = validate();
-  if (Object.keys(errs).length) {
-    setErrors(errs);
-    return;
-  }
+    const errs = validate();
+    if (Object.keys(errs).length) {
+      setErrors(errs);
+      return;
+    }
 
-  setStatus("sending");
+    setStatus("sending");
 
-  // ✅ DEBUG: check env variables
-  console.log("SERVICE ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
-  console.log("TEMPLATE ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-  console.log("PUBLIC KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    try {
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone,
+          company: form.company,
+          enquiry_type: form.enquiryType,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-  // ✅ DEBUG: check data being sent
-  console.log("FORM DATA:", {
-    from_name: form.name,
-    from_email: form.email,
-    phone: form.phone,
-    company: form.company,
-    enquiry_type: form.enquiryType,
-    message: form.message,
-  });
+      setStatus("success");
+      setForm(initialForm);
+    } catch (error) {
+      console.error("EMAIL ERROR:", error);
+      setStatus("error");
+    }
+  };
 
-  try {
-    const response = await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        from_name: form.name,
-        from_email: form.email,
-        phone: form.phone,
-        company: form.company,
-        enquiry_type: form.enquiryType,
-        message: form.message,
-      },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    );
-
-    // ✅ DEBUG: success response
-    console.log("SUCCESS:", response);
-
-    setStatus("success");
-    setForm(initialForm);
-  } catch (error) {
-    // ✅ DEBUG: error details
-    console.error("EMAIL ERROR:", error);
-
-    setStatus("error");
-  }
-};
   const inputBase =
     "w-full font-body text-sm text-[#0D2137] bg-[#F8F4F0] border border-[#0D2137]/15 px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-[#0D2137]/30 focus:border-[#8B1A1A] focus:bg-white";
 
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
-      {/* ══ HERO ══ */}
-      <section className="relative bg-[#0D2137] pt-40 pb-32 overflow-hidden">
+      {/* ══ HERO - Updated with white background and text adjustments ══ */}
+      <section className="relative bg-white pt-40 pb-32 overflow-hidden border-b border-[#8B1A1A]/10">
         <div
-          className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-10"
+          className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
           style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
         />
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage:
-              "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
+              "linear-gradient(#0D2137 1px,transparent 1px),linear-gradient(90deg,#0D2137 1px,transparent 1px)",
             backgroundSize: "70px 70px",
           }}
         />
@@ -207,20 +186,20 @@ export default function Contact() {
             style={{ animation: "fadeDown 0.7s ease both" }}
           >
             <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A]">
               Get in Touch
             </span>
           </div>
           <h1
-            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
+            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0D2137] leading-tight mb-6"
             style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
           >
             Start Your <span className="text-[#8B1A1A]">Project</span>
             <br />
-            <span className="text-white/25">With Us</span>
+            <span className="text-[#0D2137]/25">With Us</span>
           </h1>
           <p
-            className="font-body text-white/60 text-lg max-w-xl leading-relaxed"
+            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
           >
             Tell us about your electrical engineering project and our team will
@@ -286,7 +265,7 @@ export default function Contact() {
                         </p>
                         <p className="font-body text-[#A32D2D]/80 text-sm">
                           Please try again or email us directly at
-                          info@eldeclimited.com
+                          designs@eldecengineering.com
                         </p>
                       </div>
                     </div>
@@ -459,10 +438,10 @@ export default function Contact() {
 
             {/* ── SIDEBAR — 5 cols ── */}
             <div className="lg:col-span-5 space-y-6">
-              {/* Contact info */}
+              {/* Contact info - Updated to white background with navy text */}
               <FadeIn delay={100}>
-                <div className="bg-[#0D2137] p-8">
-                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-7">
+                <div className="bg-white border border-[#8B1A1A]/10 p-8">
+                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-7">
                     Contact Information
                   </h3>
                   <div className="space-y-6">
@@ -472,22 +451,22 @@ export default function Contact() {
                           {icon}
                         </div>
                         <div>
-                          <p className="font-sans text-xs tracking-wider uppercase text-white/40 mb-0.5">
+                          <p className="font-sans text-xs tracking-wider uppercase text-[#0D2137]/40 mb-0.5">
                             {label}
                           </p>
                           {link ? (
                             <a
                               href={link}
-                              className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300"
+                              className="font-body text-[#0D2137] text-sm hover:text-[#8B1A1A] transition-colors duration-300"
                             >
                               {value}
                             </a>
                           ) : (
-                            <p className="font-body text-white text-sm">
+                            <p className="font-body text-[#0D2137] text-sm">
                               {value}
                             </p>
                           )}
-                          <p className="font-body text-white/35 text-xs mt-0.5">
+                          <p className="font-body text-[#0D2137]/35 text-xs mt-0.5">
                             {sub}
                           </p>
                         </div>
@@ -497,7 +476,7 @@ export default function Contact() {
                 </div>
               </FadeIn>
 
-              {/* What happens next */}
+              {/* What happens next - Keep as is, already white background */}
               <FadeIn delay={180}>
                 <div className="border border-[#0D2137]/10 bg-white p-8">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-6">
@@ -544,7 +523,7 @@ export default function Contact() {
                 </div>
               </FadeIn>
 
-              {/* Standards badge */}
+              {/* Standards badge - Keep as is, already red */}
               <FadeIn delay={240}>
                 <div className="bg-[#8B1A1A] p-8 relative overflow-hidden">
                   <div

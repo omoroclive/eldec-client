@@ -158,36 +158,42 @@ export default function Services() {
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
-      {/* ══ HERO — gray-950 warm dark ══ */}
-      <section className="relative bg-gray-950 pt-40 pb-32 overflow-hidden">
-        {/* warm radial glow */}
-        <div className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at 10% 50%, rgba(139,26,26,0.25) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(80,40,10,0.2) 0%, transparent 50%)" }} />
-        {/* diagonal red shard */}
-        <div className="absolute bottom-0 left-0 w-3/4 h-full bg-[#8B1A1A] opacity-10"
-          style={{ clipPath: "polygon(0 0%, 70% 0%, 100% 100%, 0% 100%)" }} />
-        {/* grid lines */}
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "70px 70px" }} />
-        {/* lightning watermark */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none hidden lg:block">
-          <svg viewBox="0 0 24 24" fill="#F59E0B" className="w-[500px] h-[500px]">
-            <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
-          </svg>
-        </div>
-
+      {/* ══ HERO — White background with navy text ══ */}
+      <section className="relative bg-white pt-40 pb-32 overflow-hidden">
+        <div
+          className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
+          style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#0D2137 1px,transparent 1px),linear-gradient(90deg,#0D2137 1px,transparent 1px)",
+            backgroundSize: "70px 70px",
+          }}
+        />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex items-center gap-3 mb-6" style={{ animation: "fadeDown 0.7s ease both" }}>
+          <div
+            className="flex items-center gap-3 mb-6"
+            style={{ animation: "fadeDown 0.7s ease both" }}
+          >
             <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">What We Offer</span>
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A]">
+              What We Offer
+            </span>
           </div>
-          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
-            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}>
+          <h1
+            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0D2137] leading-tight mb-6"
+            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
+          >
             Our <span className="text-[#8B1A1A]">Services</span>
-            <br /><span className="text-white/25">&amp; Expertise</span>
+            <br />
+            <span className="text-[#0D2137]/25">&amp; Expertise</span>
           </h1>
-          <p className="font-body text-white/60 text-lg max-w-xl leading-relaxed"
-            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
+          <p
+            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed"
+            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
+          >
             From electrical design to specialised installations — ELDEC delivers
             engineering solutions that are safe, compliant and built to last.
           </p>
@@ -275,8 +281,7 @@ export default function Services() {
               <FadeIn key={title} delay={i * 100}>
                 <div className="bg-white border border-[#0D2137]/10 p-8 group hover:border-[#8B1A1A] hover:shadow-xl hover:shadow-[#8B1A1A]/10 transition-all duration-500 relative overflow-hidden h-full">
                   <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
-                  {/* gray-900 icon box instead of navy */}
-                  <div className="w-12 h-12 bg-gray-900 group-hover:bg-[#8B1A1A] flex items-center justify-center text-white mb-6 transition-colors duration-500">
+                  <div className="w-12 h-12 bg-[#0D2137] group-hover:bg-[#8B1A1A] flex items-center justify-center text-white mb-6 transition-colors duration-500">
                     {icon}
                   </div>
                   <h3 className="font-heading text-xl font-bold text-[#0D2137] mb-4 leading-snug">{title}</h3>
@@ -288,11 +293,10 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ══ PROJECT EXPERIENCE — gray-950 ══ */}
-      <section className="py-24 bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]"
+      {/* ══ PROJECT EXPERIENCE — Navy background ══ */}
+      <section className="py-24 bg-[#0D2137] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
-        {/* red glow bottom right */}
         <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#8B1A1A] opacity-10 blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -309,7 +313,7 @@ export default function Services() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
             {projects.map(({ num, title, location, value, desc, tag }, i) => (
               <FadeIn key={num} delay={Math.min(i * 60, 400)}>
-                <div className="group border border-white/10 p-6 hover:border-[#8B1A1A]/60 transition-all duration-300 relative overflow-hidden h-full flex flex-col">
+                <div className="group border border-white/10 p-6 hover:border-[#8B1A1A]/60 transition-all duration-300 relative overflow-hidden h-full flex flex-col bg-white/5">
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                   <div className="flex items-start justify-between mb-4">
                     <span className="font-heading text-4xl font-bold text-white/10 leading-none">{num}</span>

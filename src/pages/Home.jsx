@@ -138,88 +138,71 @@ export default function Home() {
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
       {/* ══════════════════════════════════════════
-          HERO — dark image-like bg, no navy
+          HERO — White background with navy text
       ══════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-950">
-
-        {/* Warm dark radial background — feels rich not navy */}
-        <div className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at 20% 50%, rgba(139,26,26,0.3) 0%, transparent 55%), radial-gradient(ellipse at 80% 10%, rgba(80,40,10,0.25) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.6) 0%, transparent 60%)" }} />
-
-        {/* Subtle grid */}
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
-
-        {/* Diagonal red shard */}
-        <div className="absolute bottom-0 left-0 w-full h-2/5 bg-[#8B1A1A] opacity-10"
-          style={{ clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0% 100%)" }} />
-
-        {/* Lightning bolt watermark */}
-        <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-[0.06] pointer-events-none hidden lg:block">
-          <svg viewBox="0 0 24 24" fill="#F59E0B" className="w-96 h-96">
-            <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
-          </svg>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 w-full">
-          <div className="max-w-3xl">
-
-            {/* Tag line */}
-            <div className="inline-flex items-center gap-3 mb-8"
-              style={{ animation: "fadeDown 0.8s ease forwards" }}>
-              <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-              <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">
-                Professional Electrical Engineering
-              </span>
-            </div>
-
-            {/* Main heading */}
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-8"
-              style={{ animation: "fadeUp 0.9s ease 0.1s both" }}>
-              Powering{" "}
-              <span className="text-[#8B1A1A] relative">
-                Safe
-                <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#8B1A1A] opacity-40" />
-              </span>
-              <br />& Reliable{" "}
-              <span className="text-white/30">Infrastructure</span>
-            </h1>
-
-            <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl mb-12"
-              style={{ animation: "fadeUp 0.9s ease 0.25s both" }}>
-              ELDEC Limited delivers electrical engineering consultancy, design,
-              installation and project supervision across Africa — built to
-              international standards, every time.
-            </p>
-
-            <div className="flex flex-wrap gap-4"
-              style={{ animation: "fadeUp 0.9s ease 0.4s both" }}>
-              <Link to="/contact"
-                className="font-sans text-sm tracking-widest uppercase bg-[#8B1A1A] text-white px-8 py-4 hover:bg-[#6e1515] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B1A1A]/30 active:scale-95">
-                Start a Project
-              </Link>
-              <Link to="/services"
-                className="font-sans text-sm tracking-widest uppercase border border-white/30 text-white/80 px-8 py-4 hover:border-white hover:text-white transition-all duration-300">
-                Our Services
-              </Link>
-            </div>
+      <section className="relative bg-white pt-40 pb-32 overflow-hidden">
+        <div
+          className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
+          style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#0D2137 1px,transparent 1px),linear-gradient(90deg,#0D2137 1px,transparent 1px)",
+            backgroundSize: "70px 70px",
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div
+            className="flex items-center gap-3 mb-6"
+            style={{ animation: "fadeDown 0.7s ease both" }}
+          >
+            <span className="w-8 h-[2px] bg-[#8B1A1A]" />
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A]">
+              Professional Electrical Engineering
+            </span>
           </div>
-        </div>
-
-        {/* Scroll cue */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40"
-          style={{ animation: "bounce 2s infinite" }}>
-          <span className="font-sans text-white text-xs tracking-widest uppercase">Scroll</span>
-          <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
-            <path d="M7 10l5 5 5-5z"/>
-          </svg>
+          <h1
+            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0D2137] leading-tight mb-6"
+            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
+          >
+            Powering <span className="text-[#8B1A1A]">Safe</span>
+            <br />& Reliable{" "}
+            <span className="text-[#0D2137]/25">Infrastructure</span>
+          </h1>
+          <p
+            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed mb-12"
+            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
+          >
+            ELDEC Limited delivers electrical engineering consultancy, design,
+            installation and project supervision across Africa — built to
+            international standards, every time.
+          </p>
+          <div
+            className="flex flex-wrap gap-4"
+            style={{ animation: "fadeUp 0.8s ease 0.4s both" }}
+          >
+            <Link
+              to="/contact"
+              className="font-sans text-sm tracking-widest uppercase bg-[#8B1A1A] text-white px-8 py-4 hover:bg-[#6e1515] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B1A1A]/30 active:scale-95"
+            >
+              Start a Project
+            </Link>
+            <Link
+              to="/services"
+              className="font-sans text-sm tracking-widest uppercase border border-[#0D2137]/20 text-[#0D2137] px-8 py-4 hover:border-[#8B1A1A] hover:text-[#8B1A1A] transition-all duration-300"
+            >
+              Our Services
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════
-          STATS BAR — dark charcoal instead of navy
+          STATS BAR — Navy background with white text
       ══════════════════════════════════════════ */}
-      <section className="bg-gray-900 border-t border-white/10">
+      <section className="bg-[#0D2137]">
         <div className="max-w-7xl mx-auto px-6 py-0">
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
             {stats.map(({ value, suffix, label }) => (
@@ -237,7 +220,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          ABOUT STRIP
+          ABOUT STRIP — White card on cream background
       ══════════════════════════════════════════ */}
       <section className="py-24 bg-[#F8F4F0]">
         <div className="max-w-7xl mx-auto px-6">
@@ -269,8 +252,7 @@ export default function Home() {
             <FadeIn delay={150}>
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#8B1A1A]/20 rounded-sm" />
-                {/* charcoal card instead of navy */}
-                <div className="bg-gray-900 p-10 relative">
+                <div className="bg-white border border-[#0D2137]/10 p-10 relative">
                   <div className="grid grid-cols-2 gap-6">
                     {[
                       { label: "Low Voltage Systems", icon: "⚡" },
@@ -280,15 +262,15 @@ export default function Home() {
                       { label: "EV Charging", icon: "🚗" },
                       { label: "Data Centers", icon: "🖥️" },
                     ].map(({ label, icon }) => (
-                      <div key={label} className="flex items-center gap-3 text-white/70">
+                      <div key={label} className="flex items-center gap-3 text-[#0D2137]/70">
                         <span className="text-lg">{icon}</span>
                         <span className="font-body text-sm">{label}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-8 pt-8 border-t border-white/10">
-                    <p className="font-sans text-xs tracking-wider uppercase text-[#F59E0B] mb-2">Our Commitment</p>
-                    <p className="font-body text-white/60 text-sm leading-relaxed">
+                  <div className="mt-8 pt-8 border-t border-[#0D2137]/10">
+                    <p className="font-sans text-xs tracking-wider uppercase text-[#8B1A1A] mb-2">Our Commitment</p>
+                    <p className="font-body text-[#0D2137]/60 text-sm leading-relaxed">
                       Safety of life, protection of property, and long-term operational reliability — on every project.
                     </p>
                   </div>
@@ -300,7 +282,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          SERVICES
+          SERVICES — White cards on cream background
       ══════════════════════════════════════════ */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -335,7 +317,7 @@ export default function Home() {
 
           <FadeIn className="text-center mt-12">
             <Link to="/services"
-              className="inline-block font-sans text-sm tracking-widest uppercase border border-[#0D2137] text-[#0D2137] px-10 py-4 hover:bg-[#0D2137] hover:text-white transition-all duration-300">
+              className="inline-block font-sans text-sm tracking-widest uppercase border border-[#0D2137]/20 text-[#0D2137] px-10 py-4 hover:border-[#8B1A1A] hover:text-[#8B1A1A] transition-all duration-300">
               View All Services
             </Link>
           </FadeIn>
@@ -343,12 +325,11 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          FEATURED PROJECTS — dark charcoal
+          FEATURED PROJECTS — Navy background
       ══════════════════════════════════════════ */}
-      <section className="py-24 bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]"
+      <section className="py-24 bg-[#0D2137] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-        {/* red glow bottom right */}
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8B1A1A] opacity-10 blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -370,7 +351,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map(({ num, title, location, desc, tag }, i) => (
               <FadeIn key={title} delay={i * 100}>
-                <div className="group border border-white/10 p-8 hover:border-[#8B1A1A]/60 transition-all duration-500 relative overflow-hidden">
+                <div className="group border border-white/10 p-8 hover:border-[#8B1A1A]/60 transition-all duration-500 relative overflow-hidden bg-white/5">
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                   <div className="flex items-start justify-between mb-6">
                     <span className="font-heading text-5xl font-bold text-white/10 leading-none">{num}</span>
@@ -389,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          WHY CHOOSE US
+          WHY CHOOSE US — Cream background
       ══════════════════════════════════════════ */}
       <section className="py-24 bg-[#F8F4F0]">
         <div className="max-w-7xl mx-auto px-6">
@@ -405,7 +386,7 @@ export default function Home() {
             {whyUs.map(({ title, desc }, i) => (
               <FadeIn key={title} delay={i * 80}>
                 <div className="flex gap-5 group">
-                  <div className="flex-shrink-0 w-10 h-10 bg-[#8B1A1A] flex items-center justify-center mt-1 group-hover:bg-gray-900 transition-colors duration-300">
+                  <div className="flex-shrink-0 w-10 h-10 bg-[#8B1A1A] flex items-center justify-center mt-1 group-hover:bg-[#0D2137] transition-colors duration-300">
                     <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                     </svg>
@@ -422,7 +403,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          CTA BANNER
+          CTA BANNER — Red background (accent)
       ══════════════════════════════════════════ */}
       <section className="relative bg-[#8B1A1A] py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10"

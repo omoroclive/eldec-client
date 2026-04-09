@@ -103,30 +103,42 @@ export default function About() {
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
-      {/* ══ HERO — gray-950 warm dark ══ */}
-      <section className="relative bg-gray-950 pt-40 pb-32 overflow-hidden">
-        {/* warm red radial glow */}
-        <div className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at 80% 50%, rgba(139,26,26,0.25) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(0,0,0,0.4) 0%, transparent 60%)" }} />
-        {/* diagonal red shard */}
-        <div className="absolute bottom-0 right-0 w-3/4 h-full bg-[#8B1A1A] opacity-10"
-          style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%)" }} />
-        {/* grid lines */}
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "70px 70px" }} />
-
+      {/* ══ HERO — White background with navy text ══ */}
+      <section className="relative bg-white pt-40 pb-32 overflow-hidden">
+        <div
+          className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
+          style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#0D2137 1px,transparent 1px),linear-gradient(90deg,#0D2137 1px,transparent 1px)",
+            backgroundSize: "70px 70px",
+          }}
+        />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex items-center gap-3 mb-6" style={{ animation: "fadeDown 0.7s ease both" }}>
+          <div
+            className="flex items-center gap-3 mb-6"
+            style={{ animation: "fadeDown 0.7s ease both" }}
+          >
             <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">Our Story</span>
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A]">
+              Our Story
+            </span>
           </div>
-          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
-            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}>
+          <h1
+            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0D2137] leading-tight mb-6"
+            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
+          >
             About <span className="text-[#8B1A1A]">ELDEC</span>
-            <br /><span className="text-white/30">Limited</span>
+            <br />
+            <span className="text-[#0D2137]/25">Limited</span>
           </h1>
-          <p className="font-body text-white/60 text-lg max-w-xl leading-relaxed"
-            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
+          <p
+            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed"
+            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
+          >
             A professional electrical engineering firm committed to delivering
             safe, reliable and internationally compliant solutions across Africa.
           </p>
@@ -145,7 +157,7 @@ export default function About() {
                 <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#0D2137] mb-8 leading-tight">
                   Engineering Solutions Built<br />to International Standards
                 </h2>
-                <div className="font-body text-[#0D2137]/75 leading-relaxed text-justify space-y-5 border border-[#0D2137]/10 p-8">
+                <div className="font-body text-[#0D2137]/75 leading-relaxed text-justify space-y-5 border border-[#0D2137]/10 p-8 bg-[#F8F4F0]">
                   <p>
                     <span className="float-left font-heading text-7xl font-bold text-[#8B1A1A] leading-none mr-3 mt-1"
                       style={{ lineHeight: "0.75" }}>E</span>
@@ -177,8 +189,7 @@ export default function About() {
             {/* Sidebar — 5 cols */}
             <div className="lg:col-span-5 space-y-6">
               <FadeIn delay={150}>
-                {/* gray-900 instead of navy */}
-                <div className="bg-gray-900 p-8">
+                <div className="bg-[#0D2137] p-8">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-6">At a Glance</h3>
                   <div className="space-y-5">
                     {expertise.map(({ years, area }) => (
@@ -192,7 +203,7 @@ export default function About() {
               </FadeIn>
 
               <FadeIn delay={220}>
-                <div className="border border-[#0D2137]/10 p-8">
+                <div className="border border-[#0D2137]/10 bg-white p-8">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-5">Sectors We Serve</h3>
                   <div className="flex flex-wrap gap-2">
                     {sectors.map((s) => (
@@ -242,9 +253,9 @@ export default function About() {
               </div>
             </FadeIn>
 
-            {/* Vision — gray-950 instead of navy */}
+            {/* Vision — Navy background */}
             <FadeIn delay={180}>
-              <div className="relative bg-gray-950 border border-white/10 p-10 h-full overflow-hidden group hover:border-[#8B1A1A]/50 transition-all duration-500">
+              <div className="relative bg-[#0D2137] border border-white/10 p-10 h-full overflow-hidden group hover:border-[#8B1A1A]/50 transition-all duration-500">
                 <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                 <div className="absolute bottom-0 right-0 opacity-5 pointer-events-none">
                   <svg viewBox="0 0 24 24" fill="#F59E0B" className="w-40 h-40">
@@ -283,9 +294,9 @@ export default function About() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map(({ icon, title, desc }, i) => (
               <FadeIn key={title} delay={i * 100}>
-                <div className="group text-center p-8 border border-[#0D2137]/10 hover:border-[#8B1A1A] hover:shadow-xl hover:shadow-[#8B1A1A]/10 transition-all duration-500 relative overflow-hidden">
+                <div className="group text-center p-8 border border-[#0D2137]/10 hover:border-[#8B1A1A] hover:shadow-xl hover:shadow-[#8B1A1A]/10 transition-all duration-500 relative overflow-hidden bg-[#F8F4F0]">
                   <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
-                  <div className="w-14 h-14 bg-[#F8F4F0] group-hover:bg-[#8B1A1A] flex items-center justify-center mx-auto mb-5 transition-colors duration-500">
+                  <div className="w-14 h-14 bg-white group-hover:bg-[#8B1A1A] flex items-center justify-center mx-auto mb-5 transition-colors duration-500">
                     <span className="text-[#8B1A1A] group-hover:text-white transition-colors duration-500">{icon}</span>
                   </div>
                   <h3 className="font-heading text-lg font-bold text-[#0D2137] mb-3">{title}</h3>
@@ -297,11 +308,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══ LEAD ENGINEER — gray-950 ══ */}
-      <section className="py-24 bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]"
+      {/* ══ LEAD ENGINEER — Navy background ══ */}
+      <section className="py-24 bg-[#0D2137] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
-        {/* red glow left */}
         <div className="absolute left-0 top-0 h-full w-1 bg-[#8B1A1A]" />
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#8B1A1A] opacity-10 blur-3xl" />
 
@@ -343,7 +353,7 @@ export default function About() {
                   { label: "Solar & Off-Grid",       detail: "PV System Design" },
                   { label: "Data Centers",           detail: "Tier 3 Design" },
                 ].map(({ label, detail }) => (
-                  <div key={label} className="border border-white/10 p-5 hover:border-[#8B1A1A]/50 transition-colors duration-300">
+                  <div key={label} className="border border-white/10 p-5 hover:border-[#8B1A1A]/50 transition-colors duration-300 bg-white/5">
                     <div className="w-2 h-2 bg-[#8B1A1A] mb-3" />
                     <p className="font-sans text-xs tracking-wide uppercase text-white/80 mb-1">{label}</p>
                     <p className="font-body text-white/40 text-xs">{detail}</p>
