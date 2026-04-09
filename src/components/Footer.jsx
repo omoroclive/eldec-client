@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from '../assets/logo/eldec-logo.png'
+import logo from "../assets/logo/eldec-logo.png";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -17,18 +17,11 @@ const services = [
   "Specialized Engineering",
 ];
 
-const standards = [
-  "BS 7671 IET Wiring Regulations",
-  "IEC 60364 Electrical Installations",
-  "KS 662 Wiring Code (Kenya)",
-  "NFPA 70 National Electrical Code",
-];
-
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0D2137] text-white relative overflow-hidden">
+    <footer className="bg-gray-950 text-white relative overflow-hidden">
 
       {/* Top red accent line */}
       <div className="h-1 w-full bg-[#8B1A1A]" />
@@ -43,16 +36,19 @@ export default function Footer() {
 
           {/* Col 1 — Brand */}
           <div className="lg:col-span-1">
-          <img
-  src={logo}
-  alt="ELDEC Limited"
-  className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-lighten"
-/>
+            {/* Logo on a slightly lighter surface so it pops */}
+            <div className="bg-gray-900 inline-block p-3 mb-5 rounded-sm">
+              <img
+                src={logo}
+                alt="ELDEC Limited"
+                className="h-24 w-auto object-contain"
+              />
+            </div>
             <p className="font-body text-white/60 text-sm leading-relaxed mb-6">
-              Professional electrical engineering services — design, consultancy,
-              installation and supervision across Africa and beyond.
+              Professional electrical engineering services — design,
+              consultancy, installation and supervision across Africa and
+              beyond.
             </p>
-            {/* Divider */}
             <div className="w-12 h-[2px] bg-[#8B1A1A]" />
             <p className="font-sans text-white/40 text-xs mt-4 tracking-wider uppercase">
               Incorporated in Kenya, 2025
@@ -94,63 +90,63 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4 — Contact & Standards */}
+          {/* Col 4 — Contact */}
           <div>
             <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-6 font-medium">
               Contact Us
             </h4>
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-5">
+
+              {/* Location */}
               <li className="flex items-start gap-3">
                 <span className="text-[#8B1A1A] mt-0.5 flex-shrink-0">
-                  {/* Location icon */}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                   </svg>
                 </span>
                 <span className="font-body text-white/60 text-sm leading-relaxed">
-                  5th Floor Room 5A, Timschack House, Ngong Road, Dagoretti
+                  5th Floor Room 5A, Timschack House,<br />Ngong Road, Dagoretti
                 </span>
               </li>
+
+              {/* Email 1 */}
               <li className="flex items-start gap-3">
                 <span className="text-[#8B1A1A] mt-0.5 flex-shrink-0">
-                  {/* Email icon */}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                </span>
+                <div className="flex flex-col gap-1.5">
+                  <a
+                    href="mailto:designs@eldecengineering.com"
+                    className="font-body text-white/60 text-sm hover:text-[#F59E0B] transition-colors duration-300"
+                  >
+                    designs@eldecengineering.com
+                  </a>
+                  <a
+                    href="mailto:designs.eldec@gmail.com"
+                    className="font-body text-white/40 text-sm hover:text-[#F59E0B] transition-colors duration-300"
+                  >
+                    designs.eldec@gmail.com
+                  </a>
+                </div>
+              </li>
+
+              {/* Phone */}
+              <li className="flex items-start gap-3">
+                <span className="text-[#8B1A1A] mt-0.5 flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                   </svg>
                 </span>
                 <a
-                  href="mailto:info@eldeclimited.com"
-                  className="font-body text-white/60 text-sm hover:text-white transition-colors duration-300"
-                >
-                  design.eldec@gmail.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#8B1A1A] mt-0.5 flex-shrink-0">
-                  {/* Phone icon */}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                  </svg>
-                </span>
-                <a
-                  href="tel:+254 721 387 121"
+                  href="tel:+254721387121"
                   className="font-body text-white/60 text-sm hover:text-white transition-colors duration-300"
                 >
                   +254 721 387 121
                 </a>
               </li>
-            </ul>
 
-            <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-4 font-medium">
-              Standards
-            </h4>
-            <ul className="space-y-2">
-              {standards.map((s) => (
-                <li key={s} className="font-body text-white/50 text-xs flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-[#8B1A1A] flex-shrink-0" />
-                  {s}
-                </li>
-              ))}
             </ul>
           </div>
         </div>

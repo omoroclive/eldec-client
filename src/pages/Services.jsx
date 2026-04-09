@@ -38,7 +38,6 @@ const coreServices = [
   {
     id: "01",
     title: "Electrical Design & Consultancy",
-    color: "red",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
         <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.5c0 1.38-1.12 2.5-2.5 2.5S10 13.88 10 12.5 11.12 10 12.5 10c.57 0 1.08.19 1.5.5V5h4v2zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/>
@@ -60,7 +59,6 @@ const coreServices = [
   {
     id: "02",
     title: "Installation & Supervision",
-    color: "navy",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
         <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
@@ -79,7 +77,6 @@ const coreServices = [
   {
     id: "03",
     title: "Specialized Engineering Works",
-    color: "amber",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
         <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
@@ -128,115 +125,31 @@ const training = [
 ];
 
 const projects = [
-  {
-    num: "01",
-    title: "Electric Vehicle Charging Stations",
-    location: "Kenya & Rwanda",
-    value: "7,500 kW",
-    desc: "Design and installation of EV charging stations with cumulative capacity of 7,500 kW including transformers, LV distribution, DC fast chargers, and outdoor yard installations.",
-    tag: "Energy",
-  },
-  {
-    num: "02",
-    title: "Off-Grid Solar Installation",
-    location: "Remote Facility",
-    value: "80 kWp",
-    desc: "Design and implementation of solar PV system including inverters, protection systems, charge controllers, and commissioning in remote facility.",
-    tag: "Solar",
-  },
-  {
-    num: "03",
-    title: "Rapid Deployment Camps",
-    location: "Various Countries",
-    value: "Multi-site",
-    desc: "Electrical design for temporary and permanent camps including generators, LV distribution, fuel systems, and hazardous area installations.",
-    tag: "Infrastructure",
-  },
-  {
-    num: "04",
-    title: "Police Training Facility",
-    location: "Somalia",
-    value: "Full Design",
-    desc: "Electrical tender proposal and system design including power distribution, lighting, and generator backup.",
-    tag: "Security",
-  },
-  {
-    num: "05",
-    title: "Oman Camp Facilities",
-    location: "Oman",
-    value: "Multi-building",
-    desc: "Electrical design for hangars, kitchens, and camp buildings including lighting, distribution, and lightning protection.",
-    tag: "Infrastructure",
-  },
-  {
-    num: "06",
-    title: "Catmini Plot Development",
-    location: "Central African Republic",
-    value: "Full LV Design",
-    desc: "Electrical design for residential/hotel development including full LV distribution and feasibility study.",
-    tag: "Commercial",
-  },
-  {
-    num: "07",
-    title: "Fuel Support Installations",
-    location: "Various Countries",
-    value: "NFPA & UFC",
-    desc: "Design of electrical systems for fuel storage and servicing facilities complying with NFPA and UFC standards.",
-    tag: "Hazardous",
-  },
-  {
-    num: "08",
-    title: "Kooba Data Center",
-    location: "Mombasa, Kenya",
-    value: "USD 2.5M",
-    desc: "Tier 3 data center design including RMU systems, transformers, UPS, generators, and dual power supply configuration.",
-    tag: "Data Center",
-  },
-  {
-    num: "09",
-    title: "BATUK Phase 2A",
-    location: "Laikipia, Kenya",
-    value: "KES 442M",
-    desc: "Electrical design and supervision for accommodation, catering, and support facilities including street lighting and fire alarm systems.",
-    tag: "Infrastructure",
-  },
-  {
-    num: "10",
-    title: "BATUK HV & LV Distribution",
-    location: "Laikipia, Kenya",
-    value: "KES 248M",
-    desc: "Design of electrical distribution network including substations, overhead lines, transformers, and protection systems.",
-    tag: "Distribution",
-  },
-  {
-    num: "11",
-    title: "Peponi School Electrical Upgrade",
-    location: "Nairobi, Kenya",
-    value: "KES 33M",
-    desc: "Upgrade to 11kV supply, installation of RMU, transformer, and internal wiring systems.",
-    tag: "Education",
-  },
-  {
-    num: "12",
-    title: "Buhler Service Center",
-    location: "Kenya",
-    value: "KES 24M",
-    desc: "Electrical works for warehouse, offices, and industrial plant.",
-    tag: "Industrial",
-  },
+  { num: "01", title: "Electric Vehicle Charging Stations", location: "Kenya & Rwanda",        value: "7,500 kW",     desc: "Design and installation of EV charging stations with cumulative capacity of 7,500 kW including transformers, LV distribution, DC fast chargers, and outdoor yard installations.", tag: "Energy" },
+  { num: "02", title: "Off-Grid Solar Installation",        location: "Remote Facility",        value: "80 kWp",       desc: "Design and implementation of solar PV system including inverters, protection systems, charge controllers, and commissioning in remote facility.", tag: "Solar" },
+  { num: "03", title: "Rapid Deployment Camps",            location: "Various Countries",       value: "Multi-site",   desc: "Electrical design for temporary and permanent camps including generators, LV distribution, fuel systems, and hazardous area installations.", tag: "Infrastructure" },
+  { num: "04", title: "Police Training Facility",          location: "Somalia",                 value: "Full Design",  desc: "Electrical tender proposal and system design including power distribution, lighting, and generator backup.", tag: "Security" },
+  { num: "05", title: "Oman Camp Facilities",              location: "Oman",                    value: "Multi-building",desc: "Electrical design for hangars, kitchens, and camp buildings including lighting, distribution, and lightning protection.", tag: "Infrastructure" },
+  { num: "06", title: "Catmini Plot Development",          location: "Central African Republic",value: "Full LV Design",desc: "Electrical design for residential/hotel development including full LV distribution and feasibility study.", tag: "Commercial" },
+  { num: "07", title: "Fuel Support Installations",        location: "Various Countries",       value: "NFPA & UFC",   desc: "Design of electrical systems for fuel storage and servicing facilities complying with NFPA and UFC standards.", tag: "Hazardous" },
+  { num: "08", title: "Kooba Data Center",                 location: "Mombasa, Kenya",          value: "USD 2.5M",     desc: "Tier 3 data center design including RMU systems, transformers, UPS, generators, and dual power supply configuration.", tag: "Data Center" },
+  { num: "09", title: "BATUK Phase 2A",                   location: "Laikipia, Kenya",         value: "KES 442M",     desc: "Electrical design and supervision for accommodation, catering, and support facilities including street lighting and fire alarm systems.", tag: "Infrastructure" },
+  { num: "10", title: "BATUK HV & LV Distribution",       location: "Laikipia, Kenya",         value: "KES 248M",     desc: "Design of electrical distribution network including substations, overhead lines, transformers, and protection systems.", tag: "Distribution" },
+  { num: "11", title: "Peponi School Electrical Upgrade",  location: "Nairobi, Kenya",          value: "KES 33M",      desc: "Upgrade to 11kV supply, installation of RMU, transformer, and internal wiring systems.", tag: "Education" },
+  { num: "12", title: "Buhler Service Center",             location: "Kenya",                   value: "KES 24M",      desc: "Electrical works for warehouse, offices, and industrial plant.", tag: "Industrial" },
 ];
 
 const tagColors = {
-  Energy:       "bg-[#EAF3DE] text-[#3B6D11] border-[#97C459]",
-  Solar:        "bg-[#FAEEDA] text-[#633806] border-[#FAC775]",
+  Energy:        "bg-[#EAF3DE] text-[#3B6D11] border-[#97C459]",
+  Solar:         "bg-[#FAEEDA] text-[#633806] border-[#FAC775]",
   Infrastructure:"bg-[#E6F1FB] text-[#185FA5] border-[#85B7EB]",
-  Security:     "bg-[#F1EFE8] text-[#5F5E5A] border-[#B4B2A9]",
-  Commercial:   "bg-[#FBEAF0] text-[#993556] border-[#ED93B1]",
-  Hazardous:    "bg-[#FCEBEB] text-[#A32D2D] border-[#F09595]",
-  "Data Center":"bg-[#E1F5EE] text-[#0F6E56] border-[#5DCAA5]",
-  Distribution: "bg-[#E6F1FB] text-[#185FA5] border-[#85B7EB]",
-  Education:    "bg-[#FAEEDA] text-[#633806] border-[#FAC775]",
-  Industrial:   "bg-[#F1EFE8] text-[#5F5E5A] border-[#B4B2A9]",
+  Security:      "bg-[#F1EFE8] text-[#5F5E5A] border-[#B4B2A9]",
+  Commercial:    "bg-[#FBEAF0] text-[#993556] border-[#ED93B1]",
+  Hazardous:     "bg-[#FCEBEB] text-[#A32D2D] border-[#F09595]",
+  "Data Center": "bg-[#E1F5EE] text-[#0F6E56] border-[#5DCAA5]",
+  Distribution:  "bg-[#E6F1FB] text-[#185FA5] border-[#85B7EB]",
+  Education:     "bg-[#FAEEDA] text-[#633806] border-[#FAC775]",
+  Industrial:    "bg-[#F1EFE8] text-[#5F5E5A] border-[#B4B2A9]",
 };
 
 export default function Services() {
@@ -245,21 +158,19 @@ export default function Services() {
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
-      {/* ══ HERO ══ */}
-      <section className="relative bg-[#0D2137] pt-40 pb-32 overflow-hidden">
-        <div
-          className="absolute bottom-0 left-0 w-3/4 h-full bg-[#8B1A1A] opacity-10"
-          style={{ clipPath: "polygon(0 0%, 70% 0%, 100% 100%, 0% 100%)" }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-        {/* Large lightning watermark */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none hidden lg:block">
+      {/* ══ HERO — gray-950 warm dark ══ */}
+      <section className="relative bg-gray-950 pt-40 pb-32 overflow-hidden">
+        {/* warm radial glow */}
+        <div className="absolute inset-0"
+          style={{ background: "radial-gradient(ellipse at 10% 50%, rgba(139,26,26,0.25) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(80,40,10,0.2) 0%, transparent 50%)" }} />
+        {/* diagonal red shard */}
+        <div className="absolute bottom-0 left-0 w-3/4 h-full bg-[#8B1A1A] opacity-10"
+          style={{ clipPath: "polygon(0 0%, 70% 0%, 100% 100%, 0% 100%)" }} />
+        {/* grid lines */}
+        <div className="absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "70px 70px" }} />
+        {/* lightning watermark */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none hidden lg:block">
           <svg viewBox="0 0 24 24" fill="#F59E0B" className="w-[500px] h-[500px]">
             <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
           </svg>
@@ -268,22 +179,15 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex items-center gap-3 mb-6" style={{ animation: "fadeDown 0.7s ease both" }}>
             <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">
-              What We Offer
-            </span>
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">What We Offer</span>
           </div>
-          <h1
-            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
-            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
-          >
+          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
+            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}>
             Our <span className="text-[#8B1A1A]">Services</span>
-            <br />
-            <span className="text-white/25">&amp; Expertise</span>
+            <br /><span className="text-white/25">&amp; Expertise</span>
           </h1>
-          <p
-            className="font-body text-white/60 text-lg max-w-xl leading-relaxed"
-            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
-          >
+          <p className="font-body text-white/60 text-lg max-w-xl leading-relaxed"
+            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
             From electrical design to specialised installations — ELDEC delivers
             engineering solutions that are safe, compliant and built to last.
           </p>
@@ -294,27 +198,20 @@ export default function Services() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn className="text-center mb-16">
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">
-              Core Offerings
-            </span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137]">
-              Engineering Services
-            </h2>
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">Core Offerings</span>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137]">Engineering Services</h2>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mx-auto mt-6" />
           </FadeIn>
 
           {/* Tab buttons */}
           <FadeIn className="flex flex-col sm:flex-row gap-2 mb-0 border-b border-[#0D2137]/10">
             {coreServices.map(({ id, title }, i) => (
-              <button
-                key={id}
-                onClick={() => setActiveService(i)}
+              <button key={id} onClick={() => setActiveService(i)}
                 className={`flex items-center gap-3 px-6 py-4 font-sans text-sm tracking-wide transition-all duration-300 border-b-2 -mb-[1px] text-left ${
                   activeService === i
                     ? "border-[#8B1A1A] text-[#8B1A1A]"
                     : "border-transparent text-[#0D2137]/50 hover:text-[#0D2137]"
-                }`}
-              >
+                }`}>
                 <span className="font-heading text-xs text-[#8B1A1A]/40">{id}</span>
                 {title}
               </button>
@@ -323,36 +220,25 @@ export default function Services() {
 
           {/* Tab content */}
           {coreServices.map(({ id, title, icon, desc, items }, i) => (
-            <div
-              key={id}
-              style={{
-                display: activeService === i ? "block" : "none",
-              }}
-            >
+            <div key={id} style={{ display: activeService === i ? "block" : "none" }}>
               <div className="grid lg:grid-cols-2 gap-12 pt-12">
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 bg-[#8B1A1A] flex items-center justify-center text-white flex-shrink-0">
-                      {icon}
-                    </div>
+                    <div className="w-14 h-14 bg-[#8B1A1A] flex items-center justify-center text-white flex-shrink-0">{icon}</div>
                     <div>
                       <p className="font-sans text-xs tracking-widest uppercase text-[#8B1A1A]">Service {id}</p>
                       <h3 className="font-heading text-2xl font-bold text-[#0D2137]">{title}</h3>
                     </div>
                   </div>
                   <p className="font-body text-[#0D2137]/65 leading-relaxed mb-8 text-justify">{desc}</p>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-3 font-sans text-sm tracking-widest uppercase text-[#8B1A1A] group"
-                  >
+                  <Link to="/contact"
+                    className="inline-flex items-center gap-3 font-sans text-sm tracking-widest uppercase text-[#8B1A1A] group">
                     <span>Enquire About This Service</span>
                     <span className="w-8 h-[2px] bg-[#8B1A1A] group-hover:w-14 transition-all duration-300" />
                   </Link>
                 </div>
                 <div>
-                  <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-[#0D2137]/40 mb-5">
-                    Scope includes
-                  </h4>
+                  <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-[#0D2137]/40 mb-5">Scope includes</h4>
                   <ul className="space-y-3">
                     {items.map((item) => (
                       <li key={item} className="flex items-start gap-4 group">
@@ -376,16 +262,11 @@ export default function Services() {
       <section className="py-24 bg-[#F8F4F0]">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn className="text-center mb-16">
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">
-              Knowledge Transfer
-            </span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137]">
-              Technical Training
-            </h2>
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">Knowledge Transfer</span>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137]">Technical Training</h2>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mx-auto mt-6" />
             <p className="font-body text-[#0D2137]/60 max-w-lg mx-auto mt-5 leading-relaxed">
-              We offer structured technical training programmes for engineers,
-              contractors and project teams.
+              We offer structured technical training programmes for engineers, contractors and project teams.
             </p>
           </FadeIn>
 
@@ -394,7 +275,8 @@ export default function Services() {
               <FadeIn key={title} delay={i * 100}>
                 <div className="bg-white border border-[#0D2137]/10 p-8 group hover:border-[#8B1A1A] hover:shadow-xl hover:shadow-[#8B1A1A]/10 transition-all duration-500 relative overflow-hidden h-full">
                   <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
-                  <div className="w-12 h-12 bg-[#0D2137] group-hover:bg-[#8B1A1A] flex items-center justify-center text-white mb-6 transition-colors duration-500">
+                  {/* gray-900 icon box instead of navy */}
+                  <div className="w-12 h-12 bg-gray-900 group-hover:bg-[#8B1A1A] flex items-center justify-center text-white mb-6 transition-colors duration-500">
                     {icon}
                   </div>
                   <h3 className="font-heading text-xl font-bold text-[#0D2137] mb-4 leading-snug">{title}</h3>
@@ -406,25 +288,17 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ══ PROJECT EXPERIENCE ══ */}
-      <section className="py-24 bg-[#0D2137] relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#8B1A1A] opacity-5 rotate-12 translate-x-20 translate-y-20" />
+      {/* ══ PROJECT EXPERIENCE — gray-950 ══ */}
+      <section className="py-24 bg-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
+        {/* red glow bottom right */}
+        <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#8B1A1A] opacity-10 blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <FadeIn className="mb-16">
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B] mb-4 block">
-              Track Record
-            </span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-4">
-              Project Experience
-            </h2>
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B] mb-4 block">Track Record</span>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-4">Project Experience</h2>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mb-6" />
             <p className="font-body text-white/50 max-w-xl leading-relaxed">
               A selection of projects successfully completed by the ELDEC engineering team
@@ -435,18 +309,14 @@ export default function Services() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
             {projects.map(({ num, title, location, value, desc, tag }, i) => (
               <FadeIn key={num} delay={Math.min(i * 60, 400)}>
-                <div className="group border border-white/10 p-6 hover:border-[#8B1A1A]/60 transition-all duration-400 relative overflow-hidden h-full flex flex-col">
+                <div className="group border border-white/10 p-6 hover:border-[#8B1A1A]/60 transition-all duration-300 relative overflow-hidden h-full flex flex-col">
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
-
-                  {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <span className="font-heading text-4xl font-bold text-white/10 leading-none">{num}</span>
                     <span className={`font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 border ${tagColors[tag] || "bg-white/10 text-white/50 border-white/20"}`}>
                       {tag}
                     </span>
                   </div>
-
-                  {/* Content */}
                   <h3 className="font-heading text-lg font-bold text-white mb-1 leading-snug">{title}</h3>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="font-sans text-xs tracking-wide uppercase text-[#8B1A1A]">{location}</span>
@@ -463,33 +333,22 @@ export default function Services() {
 
       {/* ══ CTA ══ */}
       <section className="relative bg-[#8B1A1A] py-20 overflow-hidden">
-        <div
-          className="absolute left-0 top-0 h-full w-1/2 opacity-10"
-          style={{
-            backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
-            backgroundSize: "20px 20px",
-          }}
-        />
+        <div className="absolute left-0 top-0 h-full w-1/2 opacity-10"
+          style={{ backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)", backgroundSize: "20px 20px" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <FadeIn>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-5">
-              Need an Engineering Solution?
-            </h2>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-5">Need an Engineering Solution?</h2>
             <p className="font-body text-white/70 text-lg mb-10 max-w-lg mx-auto leading-relaxed">
               Whether it's design, installation, consultancy or training — get in touch
               and we'll tailor the right solution for your project.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contact"
-                className="font-sans text-sm tracking-widest uppercase bg-white text-[#8B1A1A] px-10 py-4 hover:bg-[#F8F4F0] transition-all duration-300 active:scale-95"
-              >
+              <Link to="/contact"
+                className="font-sans text-sm tracking-widest uppercase bg-white text-[#8B1A1A] px-10 py-4 hover:bg-[#F8F4F0] transition-all duration-300 active:scale-95">
                 Get in Touch
               </Link>
-              <Link
-                to="/about"
-                className="font-sans text-sm tracking-widest uppercase border border-white/40 text-white px-10 py-4 hover:border-white transition-all duration-300"
-              >
+              <Link to="/about"
+                className="font-sans text-sm tracking-widest uppercase border border-white/40 text-white px-10 py-4 hover:border-white transition-all duration-300">
                 About ELDEC
               </Link>
             </div>

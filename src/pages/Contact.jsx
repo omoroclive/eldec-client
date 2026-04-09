@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+  import { useEffect, useRef, useState } from "react";
+  import emailjs from "@emailjs/browser";
+  
 
 /* ── in-view hook ── */
 function useInView(threshold = 0.12) {
@@ -7,9 +9,12 @@ function useInView(threshold = 0.12) {
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting) { setVisible(true); obs.disconnect(); }
+        if (e.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
       },
-      { threshold }
+      { threshold },
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
@@ -53,9 +58,10 @@ const contactDetails = [
       </svg>
     ),
     label: "Email Address",
-    value: "design.eldec@gmail.com",
-    sub: "We respond within 24 hours",
-    link: "mailto:info@eldeclimited.com",
+
+    value: "designs@eldecengineering.com",
+    sub: "designs.eldec@gmail.com",
+    link: "mailto:designs@eldecengineering.com",
   },
   {
     icon: (
@@ -93,8 +99,12 @@ const enquiryTypes = [
 ];
 
 const initialForm = {
-  name: "", email: "", phone: "",
-  company: "", enquiryType: "", message: "",
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+  enquiryType: "",
+  message: "",
 };
 
 export default function Contact() {
@@ -106,8 +116,10 @@ export default function Contact() {
     const e = {};
     if (!form.name.trim()) e.name = "Full name is required";
     if (!form.email.trim()) e.email = "Email address is required";
-    else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = "Enter a valid email address";
-    if (!form.message.trim()) e.message = "Please describe your project or enquiry";
+    else if (!/\S+@\S+\.\S+/.test(form.email))
+      e.email = "Enter a valid email address";
+    if (!form.message.trim())
+      e.message = "Please describe your project or enquiry";
     return e;
   };
 
@@ -117,57 +129,64 @@ export default function Contact() {
     if (errors[name]) setErrors((er) => ({ ...er, [name]: "" }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errs = validate();
-    if (Object.keys(errs).length) { setErrors(errs); return; }
-    setStatus("sending");
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    /*
-    ── EMAILJS SETUP ───────────────────────────────────────────────
-    1. Run:  npm install @emailjs/browser   (inside client/ folder)
-    2. Sign up at emailjs.com
-    3. Create a Service (Gmail works) + an Email Template
-    4. In your template use variables: {{from_name}}, {{from_email}},
-       {{phone}}, {{company}}, {{enquiry_type}}, {{message}}
-    5. Replace the three IDs below and uncomment the block
+  const errs = validate();
+  if (Object.keys(errs).length) {
+    setErrors(errs);
+    return;
+  }
 
-    import emailjs from "@emailjs/browser";
+  setStatus("sending");
 
-    try {
-      await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        {
-          from_name:    form.name,
-          from_email:   form.email,
-          phone:        form.phone,
-          company:      form.company,
-          enquiry_type: form.enquiryType,
-          message:      form.message,
-        },
-        "YOUR_PUBLIC_KEY"
-      );
-      setStatus("success");
-      setForm(initialForm);
-    } catch {
-      setStatus("error");
-    }
-    ────────────────────────────────────────────────────────────── */
+  // ✅ DEBUG: check env variables
+  console.log("SERVICE ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+  console.log("TEMPLATE ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+  console.log("PUBLIC KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
-    // Remove this timeout once EmailJS is connected
-    setTimeout(() => {
-      setStatus("success");
-      setForm(initialForm);
-    }, 1800);
-  };
+  // ✅ DEBUG: check data being sent
+  console.log("FORM DATA:", {
+    from_name: form.name,
+    from_email: form.email,
+    phone: form.phone,
+    company: form.company,
+    enquiry_type: form.enquiryType,
+    message: form.message,
+  });
 
+  try {
+    const response = await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: form.name,
+        from_email: form.email,
+        phone: form.phone,
+        company: form.company,
+        enquiry_type: form.enquiryType,
+        message: form.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
+    // ✅ DEBUG: success response
+    console.log("SUCCESS:", response);
+
+    setStatus("success");
+    setForm(initialForm);
+  } catch (error) {
+    // ✅ DEBUG: error details
+    console.error("EMAIL ERROR:", error);
+
+    setStatus("error");
+  }
+};
   const inputBase =
     "w-full font-body text-sm text-[#0D2137] bg-[#F8F4F0] border border-[#0D2137]/15 px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-[#0D2137]/30 focus:border-[#8B1A1A] focus:bg-white";
 
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
-
       {/* ══ HERO ══ */}
       <section className="relative bg-[#0D2137] pt-40 pb-32 overflow-hidden">
         <div
@@ -177,28 +196,35 @@ export default function Contact() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
+            backgroundImage:
+              "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
             backgroundSize: "70px 70px",
           }}
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex items-center gap-3 mb-6" style={{ animation: "fadeDown 0.7s ease both" }}>
+          <div
+            className="flex items-center gap-3 mb-6"
+            style={{ animation: "fadeDown 0.7s ease both" }}
+          >
             <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">Get in Touch</span>
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B]">
+              Get in Touch
+            </span>
           </div>
           <h1
             className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
             style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
           >
             Start Your <span className="text-[#8B1A1A]">Project</span>
-            <br /><span className="text-white/25">With Us</span>
+            <br />
+            <span className="text-white/25">With Us</span>
           </h1>
           <p
             className="font-body text-white/60 text-lg max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
           >
-            Tell us about your electrical engineering project and our team
-            will get back to you within 24 hours.
+            Tell us about your electrical engineering project and our team will
+            get back to you within 24 hours.
           </p>
         </div>
       </section>
@@ -207,12 +233,13 @@ export default function Contact() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16">
-
             {/* ── FORM — 7 cols ── */}
             <div className="lg:col-span-7">
               <FadeIn>
                 <div className="bg-white border border-[#0D2137]/10 p-8 md:p-12">
-                  <h2 className="font-heading text-3xl font-bold text-[#0D2137] mb-2">Send Us a Message</h2>
+                  <h2 className="font-heading text-3xl font-bold text-[#0D2137] mb-2">
+                    Send Us a Message
+                  </h2>
                   <p className="font-body text-[#0D2137]/50 text-sm mb-8">
                     Fill in the form below and we'll respond within 24 hours.
                   </p>
@@ -221,14 +248,21 @@ export default function Contact() {
                   {status === "success" && (
                     <div className="bg-[#EAF3DE] border border-[#97C459] p-6 mb-8 flex items-start gap-4">
                       <div className="w-10 h-10 bg-[#3B6D11] flex items-center justify-center flex-shrink-0">
-                        <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="white"
+                          className="w-5 h-5"
+                        >
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                         </svg>
                       </div>
                       <div>
-                        <p className="font-heading text-lg font-bold text-[#3B6D11] mb-1">Message Sent Successfully</p>
+                        <p className="font-heading text-lg font-bold text-[#3B6D11] mb-1">
+                          Message Sent Successfully
+                        </p>
                         <p className="font-body text-[#3B6D11]/80 text-sm leading-relaxed">
-                          Thank you for reaching out. Our engineering team will review your enquiry and respond within 24 hours.
+                          Thank you for reaching out. Our engineering team will
+                          review your enquiry and respond within 24 hours.
                         </p>
                       </div>
                     </div>
@@ -238,14 +272,21 @@ export default function Contact() {
                   {status === "error" && (
                     <div className="bg-[#FCEBEB] border border-[#F09595] p-6 mb-8 flex items-start gap-4">
                       <div className="w-10 h-10 bg-[#A32D2D] flex items-center justify-center flex-shrink-0">
-                        <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="white"
+                          className="w-5 h-5"
+                        >
                           <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                         </svg>
                       </div>
                       <div>
-                        <p className="font-heading text-lg font-bold text-[#A32D2D] mb-1">Something Went Wrong</p>
+                        <p className="font-heading text-lg font-bold text-[#A32D2D] mb-1">
+                          Something Went Wrong
+                        </p>
                         <p className="font-body text-[#A32D2D]/80 text-sm">
-                          Please try again or email us directly at info@eldeclimited.com
+                          Please try again or email us directly at
+                          info@eldeclimited.com
                         </p>
                       </div>
                     </div>
@@ -259,40 +300,65 @@ export default function Contact() {
                           Full Name <span className="text-[#8B1A1A]">*</span>
                         </label>
                         <input
-                          type="text" name="name" value={form.name}
-                          onChange={handleChange} placeholder="John Kamau"
+                          type="text"
+                          name="name"
+                          value={form.name}
+                          onChange={handleChange}
+                          placeholder="John Kamau"
                           className={`${inputBase} ${errors.name ? "border-red-400 bg-red-50" : ""}`}
                         />
-                        {errors.name && <p className="font-sans text-xs text-red-500 mt-1">{errors.name}</p>}
+                        {errors.name && (
+                          <p className="font-sans text-xs text-red-500 mt-1">
+                            {errors.name}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">
-                          Email Address <span className="text-[#8B1A1A]">*</span>
+                          Email Address{" "}
+                          <span className="text-[#8B1A1A]">*</span>
                         </label>
                         <input
-                          type="email" name="email" value={form.email}
-                          onChange={handleChange} placeholder="john@company.com"
+                          type="email"
+                          name="email"
+                          value={form.email}
+                          onChange={handleChange}
+                          placeholder="john@company.com"
                           className={`${inputBase} ${errors.email ? "border-red-400 bg-red-50" : ""}`}
                         />
-                        {errors.email && <p className="font-sans text-xs text-red-500 mt-1">{errors.email}</p>}
+                        {errors.email && (
+                          <p className="font-sans text-xs text-red-500 mt-1">
+                            {errors.email}
+                          </p>
+                        )}
                       </div>
                     </div>
 
                     {/* Phone + Company */}
                     <div className="grid sm:grid-cols-2 gap-4 mb-4">
                       <div>
-                        <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">Phone Number</label>
+                        <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">
+                          Phone Number
+                        </label>
                         <input
-                          type="tel" name="phone" value={form.phone}
-                          onChange={handleChange} placeholder="+254 7XX XXX XXX"
+                          type="tel"
+                          name="phone"
+                          value={form.phone}
+                          onChange={handleChange}
+                          placeholder="+254 7XX XXX XXX"
                           className={inputBase}
                         />
                       </div>
                       <div>
-                        <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">Company / Organisation</label>
+                        <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">
+                          Company / Organisation
+                        </label>
                         <input
-                          type="text" name="company" value={form.company}
-                          onChange={handleChange} placeholder="Your company name"
+                          type="text"
+                          name="company"
+                          value={form.company}
+                          onChange={handleChange}
+                          placeholder="Your company name"
                           className={inputBase}
                         />
                       </div>
@@ -300,29 +366,43 @@ export default function Contact() {
 
                     {/* Enquiry type */}
                     <div className="mb-4">
-                      <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">Type of Enquiry</label>
+                      <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">
+                        Type of Enquiry
+                      </label>
                       <select
-                        name="enquiryType" value={form.enquiryType}
+                        name="enquiryType"
+                        value={form.enquiryType}
                         onChange={handleChange}
                         className={`${inputBase} cursor-pointer`}
                       >
                         <option value="">Select a service area...</option>
-                        {enquiryTypes.map((t) => <option key={t} value={t}>{t}</option>)}
+                        {enquiryTypes.map((t) => (
+                          <option key={t} value={t}>
+                            {t}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
                     {/* Message */}
                     <div className="mb-8">
                       <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">
-                        Project Details / Message <span className="text-[#8B1A1A]">*</span>
+                        Project Details / Message{" "}
+                        <span className="text-[#8B1A1A]">*</span>
                       </label>
                       <textarea
-                        name="message" value={form.message}
-                        onChange={handleChange} rows={6}
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        rows={6}
                         placeholder="Briefly describe your project, location, scope of work and any specific requirements..."
                         className={`${inputBase} resize-none ${errors.message ? "border-red-400 bg-red-50" : ""}`}
                       />
-                      {errors.message && <p className="font-sans text-xs text-red-500 mt-1">{errors.message}</p>}
+                      {errors.message && (
+                        <p className="font-sans text-xs text-red-500 mt-1">
+                          {errors.message}
+                        </p>
+                      )}
                     </div>
 
                     {/* Submit */}
@@ -333,16 +413,34 @@ export default function Contact() {
                     >
                       {status === "sending" ? (
                         <>
-                          <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="12" cy="12" r="10" strokeOpacity="0.25" />
-                            <path d="M12 2a10 10 0 0 1 10 10" strokeLinecap="round" />
+                          <svg
+                            className="animate-spin w-4 h-4"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              strokeOpacity="0.25"
+                            />
+                            <path
+                              d="M12 2a10 10 0 0 1 10 10"
+                              strokeLinecap="round"
+                            />
                           </svg>
                           Sending...
                         </>
                       ) : (
                         <>
                           Send Message
-                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-4 h-4"
+                          >
                             <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                           </svg>
                         </>
@@ -350,7 +448,9 @@ export default function Contact() {
                     </button>
 
                     <p className="font-body text-[#0D2137]/35 text-xs mt-4 text-center">
-                      Fields marked <span className="text-[#8B1A1A]">*</span> are required. Your information is kept strictly confidential.
+                      Fields marked <span className="text-[#8B1A1A]">*</span>{" "}
+                      are required. Your information is kept strictly
+                      confidential.
                     </p>
                   </form>
                 </div>
@@ -359,23 +459,37 @@ export default function Contact() {
 
             {/* ── SIDEBAR — 5 cols ── */}
             <div className="lg:col-span-5 space-y-6">
-
               {/* Contact info */}
               <FadeIn delay={100}>
                 <div className="bg-[#0D2137] p-8">
-                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-7">Contact Information</h3>
+                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-7">
+                    Contact Information
+                  </h3>
                   <div className="space-y-6">
                     {contactDetails.map(({ icon, label, value, sub, link }) => (
                       <div key={label} className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-[#8B1A1A] flex items-center justify-center flex-shrink-0 text-white">{icon}</div>
+                        <div className="w-10 h-10 bg-[#8B1A1A] flex items-center justify-center flex-shrink-0 text-white">
+                          {icon}
+                        </div>
                         <div>
-                          <p className="font-sans text-xs tracking-wider uppercase text-white/40 mb-0.5">{label}</p>
+                          <p className="font-sans text-xs tracking-wider uppercase text-white/40 mb-0.5">
+                            {label}
+                          </p>
                           {link ? (
-                            <a href={link} className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300">{value}</a>
+                            <a
+                              href={link}
+                              className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300"
+                            >
+                              {value}
+                            </a>
                           ) : (
-                            <p className="font-body text-white text-sm">{value}</p>
+                            <p className="font-body text-white text-sm">
+                              {value}
+                            </p>
                           )}
-                          <p className="font-body text-white/35 text-xs mt-0.5">{sub}</p>
+                          <p className="font-body text-white/35 text-xs mt-0.5">
+                            {sub}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -386,19 +500,43 @@ export default function Contact() {
               {/* What happens next */}
               <FadeIn delay={180}>
                 <div className="border border-[#0D2137]/10 bg-white p-8">
-                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-6">What Happens Next</h3>
+                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-6">
+                    What Happens Next
+                  </h3>
                   <div className="space-y-5">
                     {[
-                      { step: "01", title: "We review your enquiry", desc: "Our engineering team reads every submission carefully within 24 hours." },
-                      { step: "02", title: "Initial consultation", desc: "We'll reach out to understand your project requirements in detail." },
-                      { step: "03", title: "Proposal & quotation", desc: "We prepare a tailored engineering proposal and cost estimate." },
-                      { step: "04", title: "Project kickoff", desc: "On your approval, we mobilise our team and begin work." },
+                      {
+                        step: "01",
+                        title: "We review your enquiry",
+                        desc: "Our engineering team reads every submission carefully within 24 hours.",
+                      },
+                      {
+                        step: "02",
+                        title: "Initial consultation",
+                        desc: "We'll reach out to understand your project requirements in detail.",
+                      },
+                      {
+                        step: "03",
+                        title: "Proposal & quotation",
+                        desc: "We prepare a tailored engineering proposal and cost estimate.",
+                      },
+                      {
+                        step: "04",
+                        title: "Project kickoff",
+                        desc: "On your approval, we mobilise our team and begin work.",
+                      },
                     ].map(({ step, title, desc }) => (
                       <div key={step} className="flex gap-4">
-                        <span className="font-heading text-2xl font-bold text-[#8B1A1A]/20 leading-none flex-shrink-0 w-8">{step}</span>
+                        <span className="font-heading text-2xl font-bold text-[#8B1A1A]/20 leading-none flex-shrink-0 w-8">
+                          {step}
+                        </span>
                         <div>
-                          <p className="font-sans text-sm font-medium text-[#0D2137] mb-1">{title}</p>
-                          <p className="font-body text-[#0D2137]/50 text-xs leading-relaxed">{desc}</p>
+                          <p className="font-sans text-sm font-medium text-[#0D2137] mb-1">
+                            {title}
+                          </p>
+                          <p className="font-body text-[#0D2137]/50 text-xs leading-relaxed">
+                            {desc}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -412,7 +550,8 @@ export default function Contact() {
                   <div
                     className="absolute inset-0 opacity-10"
                     style={{
-                      backgroundImage: "repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
+                      backgroundImage:
+                        "repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
                       backgroundSize: "16px 16px",
                     }}
                   />
@@ -426,8 +565,9 @@ export default function Contact() {
                       Compliant Engineering. Every Time.
                     </p>
                     <p className="font-body text-white/65 text-sm leading-relaxed">
-                      All ELDEC designs and installations comply with BS 7671, IEC 60364,
-                      KS 662 and other applicable international standards.
+                      All ELDEC designs and installations comply with BS 7671,
+                      IEC 60364, KS 662 and other applicable international
+                      standards.
                     </p>
                   </div>
                 </div>
