@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../assets/logo/footerLogo.png";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -33,18 +34,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
 
-          {/* Col 1 — Brand - Typography Based Logo */}
+          {/* Col 1 — Brand Logo */}
           <div className="lg:col-span-1">
             <div className="mb-6">
               <NavLink to="/" className="inline-block group">
-                {/* Uses font-heading and text-4xl/5xl matching the Home page headers */}
-                <span className="font-heading text-4xl lg:text-5xl font-bold text-white leading-none tracking-wide group-hover:text-white/90 transition-colors">
-                  ELDEC<span className="text-[#8B1A1A]">.</span>
-                </span>
-                {/* Uses font-sans matching the small uppercase subheadings */}
-                <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-white/50 mt-2 block ml-1">
-                  Limited
-                </span>
+                <img 
+                  src={logo} 
+                  alt="Eldec Limited Logo" 
+                  className="h-16 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 origin-left"
+                />
               </NavLink>
             </div>
             
