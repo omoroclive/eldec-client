@@ -107,7 +107,7 @@ const initialForm = {
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -153,7 +153,6 @@ export default function Contact() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      console.log("SUCCESS:", response);
       setStatus("success");
       setForm(initialForm);
     } catch (error) {
@@ -167,9 +166,8 @@ export default function Contact() {
 
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
-
-      {/* ══ HERO — White background with navy text (matching home page) ══ */}
-      <section className="relative bg-white pt-40 pb-32 overflow-hidden">
+      {/* ══ HERO - Updated with white background and text adjustments ══ */}
+      <section className="relative bg-white pt-40 pb-32 overflow-hidden border-b border-[#8B1A1A]/10">
         <div
           className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
           style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
@@ -201,7 +199,7 @@ export default function Contact() {
             <span className="text-[#0D2137]/25">With Us</span>
           </h1>
           <p
-            className="font-body text-[#0D2137] text-lg max-w-xl leading-relaxed"
+            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
           >
             Tell us about your electrical engineering project and our team will
@@ -211,10 +209,9 @@ export default function Contact() {
       </section>
 
       {/* ══ MAIN CONTENT ══ */}
-      <section className="py-24 bg-[#F8F4F0]">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16">
-
             {/* ── FORM — 7 cols ── */}
             <div className="lg:col-span-7">
               <FadeIn>
@@ -222,7 +219,7 @@ export default function Contact() {
                   <h2 className="font-heading text-3xl font-bold text-[#0D2137] mb-2">
                     Send Us a Message
                   </h2>
-                  <p className="font-body text-[#0D2137] text-sm mb-8">
+                  <p className="font-body text-[#0D2137]/50 text-sm mb-8">
                     Fill in the form below and we'll respond within 24 hours.
                   </p>
 
@@ -230,7 +227,11 @@ export default function Contact() {
                   {status === "success" && (
                     <div className="bg-[#EAF3DE] border border-[#97C459] p-6 mb-8 flex items-start gap-4">
                       <div className="w-10 h-10 bg-[#3B6D11] flex items-center justify-center flex-shrink-0">
-                        <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="white"
+                          className="w-5 h-5"
+                        >
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                         </svg>
                       </div>
@@ -250,7 +251,11 @@ export default function Contact() {
                   {status === "error" && (
                     <div className="bg-[#FCEBEB] border border-[#F09595] p-6 mb-8 flex items-start gap-4">
                       <div className="w-10 h-10 bg-[#A32D2D] flex items-center justify-center flex-shrink-0">
-                        <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="white"
+                          className="w-5 h-5"
+                        >
                           <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                         </svg>
                       </div>
@@ -282,12 +287,15 @@ export default function Contact() {
                           className={`${inputBase} ${errors.name ? "border-red-400 bg-red-50" : ""}`}
                         />
                         {errors.name && (
-                          <p className="font-sans text-xs text-red-500 mt-1">{errors.name}</p>
+                          <p className="font-sans text-xs text-red-500 mt-1">
+                            {errors.name}
+                          </p>
                         )}
                       </div>
                       <div>
                         <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">
-                          Email Address <span className="text-[#8B1A1A]">*</span>
+                          Email Address{" "}
+                          <span className="text-[#8B1A1A]">*</span>
                         </label>
                         <input
                           type="email"
@@ -298,7 +306,9 @@ export default function Contact() {
                           className={`${inputBase} ${errors.email ? "border-red-400 bg-red-50" : ""}`}
                         />
                         {errors.email && (
-                          <p className="font-sans text-xs text-red-500 mt-1">{errors.email}</p>
+                          <p className="font-sans text-xs text-red-500 mt-1">
+                            {errors.email}
+                          </p>
                         )}
                       </div>
                     </div>
@@ -346,7 +356,9 @@ export default function Contact() {
                       >
                         <option value="">Select a service area...</option>
                         {enquiryTypes.map((t) => (
-                          <option key={t} value={t}>{t}</option>
+                          <option key={t} value={t}>
+                            {t}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -354,7 +366,8 @@ export default function Contact() {
                     {/* Message */}
                     <div className="mb-8">
                       <label className="font-sans text-xs tracking-widest uppercase text-[#0D2137]/50 block mb-2">
-                        Project Details / Message <span className="text-[#8B1A1A]">*</span>
+                        Project Details / Message{" "}
+                        <span className="text-[#8B1A1A]">*</span>
                       </label>
                       <textarea
                         name="message"
@@ -365,7 +378,9 @@ export default function Contact() {
                         className={`${inputBase} resize-none ${errors.message ? "border-red-400 bg-red-50" : ""}`}
                       />
                       {errors.message && (
-                        <p className="font-sans text-xs text-red-500 mt-1">{errors.message}</p>
+                        <p className="font-sans text-xs text-red-500 mt-1">
+                          {errors.message}
+                        </p>
                       )}
                     </div>
 
@@ -377,25 +392,44 @@ export default function Contact() {
                     >
                       {status === "sending" ? (
                         <>
-                          <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="12" cy="12" r="10" strokeOpacity="0.25" />
-                            <path d="M12 2a10 10 0 0 1 10 10" strokeLinecap="round" />
+                          <svg
+                            className="animate-spin w-4 h-4"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              strokeOpacity="0.25"
+                            />
+                            <path
+                              d="M12 2a10 10 0 0 1 10 10"
+                              strokeLinecap="round"
+                            />
                           </svg>
                           Sending...
                         </>
                       ) : (
                         <>
                           Send Message
-                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-4 h-4"
+                          >
                             <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                           </svg>
                         </>
                       )}
                     </button>
 
-                    <p className="font-body text-[#0D2137]/50 text-xs mt-4 text-center">
-                      Fields marked <span className="text-[#8B1A1A]">*</span> are required.
-                      Your information is kept strictly confidential.
+                    <p className="font-body text-[#0D2137]/35 text-xs mt-4 text-center">
+                      Fields marked <span className="text-[#8B1A1A]">*</span>{" "}
+                      are required. Your information is kept strictly
+                      confidential.
                     </p>
                   </form>
                 </div>
@@ -404,11 +438,10 @@ export default function Contact() {
 
             {/* ── SIDEBAR — 5 cols ── */}
             <div className="lg:col-span-5 space-y-6">
-
-              {/* Contact info — Navy background */}
+              {/* Contact info - Updated to white background with navy text */}
               <FadeIn delay={100}>
-                <div className="bg-[#0D2137] p-8">
-                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-7">
+                <div className="bg-white border border-[#8B1A1A]/10 p-8">
+                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-7">
                     Contact Information
                   </h3>
                   <div className="space-y-6">
@@ -418,20 +451,24 @@ export default function Contact() {
                           {icon}
                         </div>
                         <div>
-                          <p className="font-sans text-xs tracking-wider uppercase text-white/70 mb-0.5">
+                          <p className="font-sans text-xs tracking-wider uppercase text-[#0D2137]/40 mb-0.5">
                             {label}
                           </p>
                           {link ? (
                             <a
                               href={link}
-                              className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300"
+                              className="font-body text-[#0D2137] text-sm hover:text-[#8B1A1A] transition-colors duration-300"
                             >
                               {value}
                             </a>
                           ) : (
-                            <p className="font-body text-white text-sm">{value}</p>
+                            <p className="font-body text-[#0D2137] text-sm">
+                              {value}
+                            </p>
                           )}
-                          <p className="font-body text-white/70 text-xs mt-0.5">{sub}</p>
+                          <p className="font-body text-[#0D2137]/35 text-xs mt-0.5">
+                            {sub}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -439,7 +476,7 @@ export default function Contact() {
                 </div>
               </FadeIn>
 
-              {/* What happens next — White card on cream */}
+              {/* What happens next - Keep as is, already white background */}
               <FadeIn delay={180}>
                 <div className="border border-[#0D2137]/10 bg-white p-8">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-6">
@@ -447,18 +484,38 @@ export default function Contact() {
                   </h3>
                   <div className="space-y-5">
                     {[
-                      { step: "01", title: "We review your enquiry",   desc: "Our engineering team reads every submission carefully within 24 hours." },
-                      { step: "02", title: "Initial consultation",      desc: "We'll reach out to understand your project requirements in detail." },
-                      { step: "03", title: "Proposal & quotation",      desc: "We prepare a tailored engineering proposal and cost estimate." },
-                      { step: "04", title: "Project kickoff",           desc: "On your approval, we mobilise our team and begin work." },
+                      {
+                        step: "01",
+                        title: "We review your enquiry",
+                        desc: "Our engineering team reads every submission carefully within 24 hours.",
+                      },
+                      {
+                        step: "02",
+                        title: "Initial consultation",
+                        desc: "We'll reach out to understand your project requirements in detail.",
+                      },
+                      {
+                        step: "03",
+                        title: "Proposal & quotation",
+                        desc: "We prepare a tailored engineering proposal and cost estimate.",
+                      },
+                      {
+                        step: "04",
+                        title: "Project kickoff",
+                        desc: "On your approval, we mobilise our team and begin work.",
+                      },
                     ].map(({ step, title, desc }) => (
                       <div key={step} className="flex gap-4">
                         <span className="font-heading text-2xl font-bold text-[#8B1A1A]/20 leading-none flex-shrink-0 w-8">
                           {step}
                         </span>
                         <div>
-                          <p className="font-sans text-sm font-medium text-[#0D2137] mb-1">{title}</p>
-                          <p className="font-body text-[#0D2137]/60 text-xs leading-relaxed">{desc}</p>
+                          <p className="font-sans text-sm font-medium text-[#0D2137] mb-1">
+                            {title}
+                          </p>
+                          <p className="font-body text-[#0D2137]/50 text-xs leading-relaxed">
+                            {desc}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -466,13 +523,14 @@ export default function Contact() {
                 </div>
               </FadeIn>
 
-              {/* Standards badge — Red background */}
+              {/* Standards badge - Keep as is, already red */}
               <FadeIn delay={240}>
                 <div className="bg-[#8B1A1A] p-8 relative overflow-hidden">
                   <div
                     className="absolute inset-0 opacity-10"
                     style={{
-                      backgroundImage: "repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
+                      backgroundImage:
+                        "repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
                       backgroundSize: "16px 16px",
                     }}
                   />
@@ -485,9 +543,10 @@ export default function Contact() {
                     <p className="font-heading text-xl font-bold text-white mb-2 leading-snug">
                       Compliant Engineering. Every Time.
                     </p>
-                    <p className="font-body text-white/70 text-sm leading-relaxed">
+                    <p className="font-body text-white/65 text-sm leading-relaxed">
                       All ELDEC designs and installations comply with BS 7671,
-                      IEC 60364, KS 662 and other applicable international standards.
+                      IEC 60364, KS 662 and other applicable international
+                      standards.
                     </p>
                   </div>
                 </div>

@@ -158,7 +158,7 @@ export default function Services() {
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
-      {/* ══ HERO — White background with navy text ══ */}
+      {/* ══ HERO — White background with navy text (matching home page) ══ */}
       <section className="relative bg-white pt-40 pb-32 overflow-hidden">
         <div
           className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
@@ -191,7 +191,7 @@ export default function Services() {
             <span className="text-[#0D2137]/25">&amp; Expertise</span>
           </h1>
           <p
-            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed"
+            className="font-body text-[#0D2137] text-lg max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
           >
             From electrical design to specialised installations — ELDEC delivers
@@ -236,7 +236,7 @@ export default function Services() {
                       <h3 className="font-heading text-2xl font-bold text-[#0D2137]">{title}</h3>
                     </div>
                   </div>
-                  <p className="font-body text-[#0D2137]/65 leading-relaxed mb-8 text-justify">{desc}</p>
+                  <p className="font-body text-[#0D2137] leading-relaxed mb-8 text-justify">{desc}</p>
                   <Link to="/contact"
                     className="inline-flex items-center gap-3 font-sans text-sm tracking-widest uppercase text-[#8B1A1A] group">
                     <span>Enquire About This Service</span>
@@ -253,7 +253,7 @@ export default function Services() {
                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                           </svg>
                         </div>
-                        <span className="font-body text-[#0D2137]/70 text-sm leading-relaxed">{item}</span>
+                        <span className="font-body text-[#0D2137] text-sm leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -271,7 +271,7 @@ export default function Services() {
             <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">Knowledge Transfer</span>
             <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137]">Technical Training</h2>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mx-auto mt-6" />
-            <p className="font-body text-[#0D2137]/60 max-w-lg mx-auto mt-5 leading-relaxed">
+            <p className="font-body text-[#0D2137] max-w-lg mx-auto mt-5 leading-relaxed">
               We offer structured technical training programmes for engineers, contractors and project teams.
             </p>
           </FadeIn>
@@ -285,7 +285,7 @@ export default function Services() {
                     {icon}
                   </div>
                   <h3 className="font-heading text-xl font-bold text-[#0D2137] mb-4 leading-snug">{title}</h3>
-                  <p className="font-body text-[#0D2137]/60 text-sm leading-relaxed">{desc}</p>
+                  <p className="font-body text-[#0D2137] text-sm leading-relaxed">{desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -293,11 +293,11 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ══ PROJECT EXPERIENCE — Navy background ══ */}
+      {/* ══ PROJECT EXPERIENCE — Navy background (matching home page) ══ */}
       <section className="py-24 bg-[#0D2137] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
-        <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#8B1A1A] opacity-10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8B1A1A] opacity-10 blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <FadeIn className="mb-16">
@@ -313,7 +313,7 @@ export default function Services() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
             {projects.map(({ num, title, location, value, desc, tag }, i) => (
               <FadeIn key={num} delay={Math.min(i * 60, 400)}>
-                <div className="group border border-white/10 p-6 hover:border-[#8B1A1A]/60 transition-all duration-300 relative overflow-hidden h-full flex flex-col bg-white/5">
+                <div className="group border border-white/10 p-6 hover:border-[#8B1A1A]/60 transition-all duration-300 relative overflow-hidden h-full flex flex-col">
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                   <div className="flex items-start justify-between mb-4">
                     <span className="font-heading text-4xl font-bold text-white/10 leading-none">{num}</span>

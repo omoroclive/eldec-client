@@ -136,7 +136,7 @@ export default function About() {
             <span className="text-[#0D2137]/25">Limited</span>
           </h1>
           <p
-            className="font-body text-[#0D2137] text-lg max-w-xl leading-relaxed"
+            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
           >
             A professional electrical engineering firm committed to delivering
@@ -157,7 +157,7 @@ export default function About() {
                 <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#0D2137] mb-8 leading-tight">
                   Engineering Solutions Built<br />to International Standards
                 </h2>
-                <div className="font-body text-[#0D2137] leading-relaxed text-justify space-y-5 border border-[#0D2137]/10 p-8 bg-[#F8F4F0]">
+                <div className="font-body text-[#0D2137]/75 leading-relaxed text-justify space-y-5 border border-[#0D2137]/10 p-8 bg-[#F8F4F0]">
                   <p>
                     <span className="float-left font-heading text-7xl font-bold text-[#8B1A1A] leading-none mr-3 mt-1"
                       style={{ lineHeight: "0.75" }}>E</span>
@@ -195,7 +195,7 @@ export default function About() {
                     {expertise.map(({ years, area }) => (
                       <div key={area} className="flex items-center gap-5">
                         <span className="font-heading text-3xl font-bold text-[#8B1A1A] min-w-[56px]">{years}</span>
-                        <span className="font-body text-white text-sm leading-snug border-l border-white/10 pl-5">{area}</span>
+                        <span className="font-body text-white/60 text-sm leading-snug border-l border-white/10 pl-5">{area}</span>
                       </div>
                     ))}
                   </div>
@@ -245,7 +245,7 @@ export default function About() {
                 <span className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-3 block">Our Mission</span>
                 <h3 className="font-heading text-2xl font-bold text-[#0D2137] mb-5 leading-snug">Delivering Safe, Reliable Engineering</h3>
                 <div className="w-10 h-[2px] bg-[#8B1A1A] mb-5" />
-                <p className="font-body text-[#0D2137] leading-relaxed text-justify">
+                <p className="font-body text-[#0D2137]/65 leading-relaxed text-justify">
                   To provide safe, reliable, and high-quality electrical engineering
                   solutions that meet international standards while satisfying the
                   specific needs of our clients — on every project, without compromise.
@@ -270,7 +270,7 @@ export default function About() {
                 <span className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-3 block">Our Vision</span>
                 <h3 className="font-heading text-2xl font-bold text-white mb-5 leading-snug">Globally Recognised Engineering Excellence</h3>
                 <div className="w-10 h-[2px] bg-[#F59E0B] mb-5" />
-                <p className="font-body text-white/70 leading-relaxed text-justify">
+                <p className="font-body text-white/60 leading-relaxed text-justify">
                   To be a globally recognised leader in Engineering Excellence —
                   setting the benchmark for electrical consultancy by delivering
                   safe, compliant, and innovative solutions that power sustainable
@@ -300,7 +300,7 @@ export default function About() {
                     <span className="text-[#8B1A1A] group-hover:text-white transition-colors duration-500">{icon}</span>
                   </div>
                   <h3 className="font-heading text-lg font-bold text-[#0D2137] mb-3">{title}</h3>
-                  <p className="font-body text-[#0D2137] text-sm leading-relaxed">{desc}</p>
+                  <p className="font-body text-[#0D2137]/60 text-sm leading-relaxed">{desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -324,18 +324,18 @@ export default function About() {
                 <span className="text-[#8B1A1A]">Professional Engineer</span>
               </h2>
               <div className="w-12 h-[2px] bg-[#8B1A1A] mb-8" />
-              <p className="font-body text-white/70 leading-relaxed mb-6 text-justify">
+              <p className="font-body text-white/65 leading-relaxed mb-6 text-justify">
                 ELDEC Limited is led by a Professional Electrical Engineer with over
                 12 years of experience in Low Voltage and Medium Voltage electrical
                 systems across Africa and the Middle East.
               </p>
-              <p className="font-body text-white/70 leading-relaxed mb-6 text-justify">
+              <p className="font-body text-white/65 leading-relaxed mb-6 text-justify">
                 He has worked on residential, commercial, industrial, military, and
                 infrastructure projects, and has participated in technical committees
                 involved in the development of electrical installation and EV charging
                 standards.
               </p>
-              <p className="font-body text-white/70 leading-relaxed text-justify">
+              <p className="font-body text-white/65 leading-relaxed text-justify">
                 This experience enables ELDEC Limited to deliver projects that meet
                 both local regulations and international engineering practices —
                 ensuring every client receives the highest standard of technical
@@ -372,7 +372,7 @@ export default function About() {
             <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">Our Benchmarks</span>
             <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137]">Standards &amp; Compliance</h2>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mx-auto mt-6" />
-            <p className="font-body text-[#0D2137] max-w-xl mx-auto mt-6 leading-relaxed">
+            <p className="font-body text-[#0D2137]/60 max-w-xl mx-auto mt-6 leading-relaxed">
               We ensure every project is designed, installed, tested and commissioned
               according to approved engineering standards.
             </p>
@@ -398,7 +398,7 @@ export default function About() {
                         <span className="font-sans text-[10px] tracking-widest uppercase text-[#8B1A1A] border border-[#8B1A1A] px-2 py-0.5">Primary</span>
                       )}
                     </div>
-                    <span className="font-body text-[#0D2137] text-sm">{name}</span>
+                    <span className="font-body text-[#0D2137]/55 text-sm">{name}</span>
                   </div>
                 </div>
               </FadeIn>

@@ -44,13 +44,9 @@ const stats = [
 
 const services = [
   {
-    // BOLD MODERN ICON: Precision Blueprint / Circuit Node
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-14 h-14 text-[#8B1A1A]">
-        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.25"/>
-        <path d="M7 12H11L13 6L17 18L19 12H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="5" cy="12" r="2" fill="currentColor"/>
-        <circle cx="12" cy="12" r="8" fill="currentColor" fillOpacity="0.05"/>
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
+        <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18L20 8.09v7.82L12 19.82 4 15.91V8.09L12 4.18zM12 6l-5 2.5v5L12 16l5-2.5v-5L12 6zm0 2.18L15.09 9.5 12 10.82 8.91 9.5 12 8.18zM7 10.59l4 2v2.82l-4-2v-2.82zm10 0v2.82l-4 2v-2.82l4-2z"/>
       </svg>
     ),
     title: "Electrical Design & Consultancy",
@@ -58,12 +54,9 @@ const services = [
     items: ["Low & Medium Voltage Systems", "Transformer & Switchgear Design", "Earthing & Lightning Protection", "Lighting & Small Power Layouts"],
   },
   {
-    // BOLD MODERN ICON: Isometric Layered Structure / Integration
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-14 h-14 text-[#8B1A1A]">
-        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.08"/>
-        <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M3 9H21M9 3V21" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 4" opacity="0.3"/>
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
+        <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
       </svg>
     ),
     title: "Installation & Supervision",
@@ -71,13 +64,9 @@ const services = [
     items: ["Site Inspection & Testing", "Commissioning & Certification", "Project Coordination", "Quality Assurance & Compliance"],
   },
   {
-    // BOLD MODERN ICON: Geometric Hexagon Core / Specialized Power
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-14 h-14 text-[#8B1A1A]">
-        <path d="M12 2.5L20.5 7.5V16.5L12 21.5L3.5 16.5V7.5L12 2.5Z" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.08"/>
-        <path d="M12 7.5L16.5 10.5V14.5L12 17.5L7.5 14.5V10.5L12 7.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="12" cy="12.5" r="1.5" fill="currentColor"/>
-        <path d="M12 2.5V7.5M20.5 16.5L16.5 14.5M3.5 16.5L7.5 14.5" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
+        <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
       </svg>
     ),
     title: "Specialized Engineering",
@@ -180,10 +169,10 @@ export default function Home() {
           >
             Powering <span className="text-[#8B1A1A]">Safe</span>
             <br />& Reliable{" "}
-            <span className="text-[#0D2137]">Infrastructure</span>
+            <span className="text-[#0D2137]/25">Infrastructure</span>
           </h1>
           <p
-            className="font-body text-[#0D2137] text-lg max-w-xl leading-relaxed mb-12"
+            className="font-body text-[#0D2137]/50 text-lg max-w-xl leading-relaxed mb-12"
             style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
           >
             ELDEC Limited delivers electrical engineering consultancy, design,
@@ -202,7 +191,7 @@ export default function Home() {
             </Link>
             <Link
               to="/services"
-              className="font-sans text-sm tracking-widest uppercase border border-[#0D2137] text-[#0D2137] px-8 py-4 hover:border-[#8B1A1A] hover:text-[#8B1A1A] transition-all duration-300"
+              className="font-sans text-sm tracking-widest uppercase border border-[#0D2137]/20 text-[#0D2137] px-8 py-4 hover:border-[#8B1A1A] hover:text-[#8B1A1A] transition-all duration-300"
             >
               Our Services
             </Link>
@@ -221,7 +210,7 @@ export default function Home() {
                 <div className="font-heading text-4xl lg:text-5xl font-bold text-[#8B1A1A] mb-2">
                   <Counter target={value} suffix={suffix} />
                 </div>
-                <div className="font-sans text-xs tracking-[0.15em] uppercase text-white">
+                <div className="font-sans text-xs tracking-[0.15em] uppercase text-white/50">
                   {label}
                 </div>
               </div>
@@ -242,13 +231,13 @@ export default function Home() {
                 Engineering Excellence<br />
                 <span className="text-[#8B1A1A]">Built on Standards</span>
               </h2>
-              <p className="font-body text-[#0D2137] leading-relaxed mb-4 text-justify">
+              <p className="font-body text-[#0D2137]/70 leading-relaxed mb-4 text-justify">
                 ELDEC Limited is a private limited company incorporated in the Republic of Kenya in 2025
                 to provide professional Electrical Engineering Services, Consultancy, Design, Installation,
                 and Project Supervision for residential, commercial, industrial, institutional, and
                 infrastructure developments.
               </p>
-              <p className="font-body text-[#0D2137] leading-relaxed mb-8 text-justify">
+              <p className="font-body text-[#0D2137]/70 leading-relaxed mb-8 text-justify">
                 We specialise in the design and implementation of safe, reliable, and standards-compliant
                 electrical systems with strong emphasis on quality engineering, technical accuracy, and
                 compliance with both local and international regulations.
@@ -266,40 +255,22 @@ export default function Home() {
                 <div className="bg-white border border-[#0D2137]/10 p-10 relative">
                   <div className="grid grid-cols-2 gap-6">
                     {[
-                      { 
-                        label: "Low Voltage Systems", 
-                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 12h4l2-5 4 10 2-5h4" /></svg> 
-                      },
-                      { 
-                        label: "Medium Voltage", 
-                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg> 
-                      },
-                      { 
-                        label: "Solar & Backup", 
-                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6"><circle cx="12" cy="12" r="4" strokeWidth="2"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg> 
-                      },
-                      { 
-                        label: "Fire & Life Safety", 
-                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 16c-2 0-3-2-3-4 0-2 3-6 3-6s3 4 3 6c0 2-1 4-3 4z" opacity="0.5"/></svg> 
-                      },
-                      { 
-                        label: "EV Charging", 
-                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 2v4M16 2v4M4 8h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 11l-2 3h4l-2 3"/></svg> 
-                      },
-                      { 
-                        label: "Data Centers", 
-                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6"><rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 10h16M4 16h16M8 7h.01M8 13h.01M8 19h.01"/></svg> 
-                      },
+                      { label: "Low Voltage Systems", icon: "⚡" },
+                      { label: "Medium Voltage", icon: "🔌" },
+                      { label: "Solar & Backup Power", icon: "☀️" },
+                      { label: "Fire & Life Safety", icon: "🛡️" },
+                      { label: "EV Charging", icon: "🚗" },
+                      { label: "Data Centers", icon: "🖥️" },
                     ].map(({ label, icon }) => (
-                      <div key={label} className="flex items-center gap-3 text-[#0D2137] group cursor-default">
-                        <span className="text-[#8B1A1A] group-hover:scale-110 transition-transform duration-300">{icon}</span>
-                        <span className="font-body text-sm font-semibold">{label}</span>
+                      <div key={label} className="flex items-center gap-3 text-[#0D2137]/70">
+                        <span className="text-lg">{icon}</span>
+                        <span className="font-body text-sm">{label}</span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-8 pt-8 border-t border-[#0D2137]/10">
                     <p className="font-sans text-xs tracking-wider uppercase text-[#8B1A1A] mb-2">Our Commitment</p>
-                    <p className="font-body text-[#0D2137] text-sm leading-relaxed">
+                    <p className="font-body text-[#0D2137]/60 text-sm leading-relaxed">
                       Safety of life, protection of property, and long-term operational reliability — on every project.
                     </p>
                   </div>
@@ -328,17 +299,12 @@ export default function Home() {
               <FadeIn key={title} delay={i * 120}>
                 <div className="group border border-[#0D2137]/10 p-8 hover:border-[#8B1A1A] transition-all duration-500 hover:shadow-xl hover:shadow-[#8B1A1A]/10 relative overflow-hidden bg-[#F8F4F0]">
                   <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
-                  
-                  {/* BOLD ICON WRAPPER */}
-                  <div className="mb-6 transform group-hover:-translate-y-1 transition-transform duration-500">
-                    {icon}
-                  </div>
-                  
+                  <div className="text-[#8B1A1A] mb-6">{icon}</div>
                   <h3 className="font-heading text-xl font-bold text-[#0D2137] mb-4 leading-snug">{title}</h3>
-                  <p className="font-body text-[#0D2137] text-sm leading-relaxed mb-6">{desc}</p>
+                  <p className="font-body text-[#0D2137]/60 text-sm leading-relaxed mb-6">{desc}</p>
                   <ul className="space-y-2">
                     {items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 font-sans text-xs text-[#0D2137]">
+                      <li key={item} className="flex items-center gap-2 font-sans text-xs text-[#0D2137]/70">
                         <span className="w-4 h-[1px] bg-[#8B1A1A]" />
                         {item}
                       </li>
@@ -351,7 +317,7 @@ export default function Home() {
 
           <FadeIn className="text-center mt-12">
             <Link to="/services"
-              className="inline-block font-sans text-sm tracking-widest uppercase border border-[#0D2137] text-[#0D2137] px-10 py-4 hover:border-[#8B1A1A] hover:text-[#8B1A1A] transition-all duration-300">
+              className="inline-block font-sans text-sm tracking-widest uppercase border border-[#0D2137]/20 text-[#0D2137] px-10 py-4 hover:border-[#8B1A1A] hover:text-[#8B1A1A] transition-all duration-300">
               View All Services
             </Link>
           </FadeIn>
@@ -374,9 +340,9 @@ export default function Home() {
                 Featured Projects
               </h2>
               <Link to="/services"
-                className="font-sans text-sm tracking-widest uppercase text-white hover:text-white transition-colors duration-300 flex items-center gap-3 group">
+                className="font-sans text-sm tracking-widest uppercase text-white/50 hover:text-white transition-colors duration-300 flex items-center gap-3 group">
                 All Projects
-                <span className="w-6 h-[1px] bg-white group-hover:w-10 transition-all duration-300" />
+                <span className="w-6 h-[1px] bg-white/50 group-hover:w-10 transition-all duration-300" />
               </Link>
             </div>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mt-6" />
@@ -395,7 +361,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-heading text-xl font-bold text-white mb-1">{title}</h3>
                   <p className="font-sans text-xs tracking-wider uppercase text-[#8B1A1A] mb-4">{location}</p>
-                  <p className="font-body text-white text-sm leading-relaxed">{desc}</p>
+                  <p className="font-body text-white/50 text-sm leading-relaxed">{desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -420,15 +386,14 @@ export default function Home() {
             {whyUs.map(({ title, desc }, i) => (
               <FadeIn key={title} delay={i * 80}>
                 <div className="flex gap-5 group">
-                  {/* BOLD MODERN ICON: Rotated Glass/Solid Polygon Checkmark */}
-                  <div className="flex-shrink-0 w-12 h-12 bg-white border border-[#8B1A1A]/20 rounded-xl flex items-center justify-center mt-1 group-hover:bg-[#8B1A1A] rotate-3 group-hover:-rotate-3 transition-all duration-300 shadow-sm">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#8B1A1A] group-hover:text-white transition-colors duration-300">
-                      <path d="M5 13l4 4L19 7"/>
+                  <div className="flex-shrink-0 w-10 h-10 bg-[#8B1A1A] flex items-center justify-center mt-1 group-hover:bg-[#0D2137] transition-colors duration-300">
+                    <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                     </svg>
                   </div>
                   <div>
                     <h3 className="font-heading text-lg font-bold text-[#0D2137] mb-2">{title}</h3>
-                    <p className="font-body text-[#0D2137] text-sm leading-relaxed">{desc}</p>
+                    <p className="font-body text-[#0D2137]/60 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -448,13 +413,13 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <FadeIn className="max-w-2xl">
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-white mb-4 block">
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-white/50 mb-4 block">
               Ready to Build?
             </span>
             <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Let's Start Your<br />Next Project Together
             </h2>
-            <p className="font-body text-white text-lg leading-relaxed mb-10">
+            <p className="font-body text-white/70 text-lg leading-relaxed mb-10">
               From design to commissioning — ELDEC delivers electrical engineering
               solutions that are safe, compliant and built to last.
             </p>
@@ -464,7 +429,7 @@ export default function Home() {
                 Get in Touch
               </Link>
               <Link to="/services"
-                className="font-sans text-sm tracking-widest uppercase border border-white text-white px-10 py-4 hover:border-white transition-all duration-300">
+                className="font-sans text-sm tracking-widest uppercase border border-white/40 text-white px-10 py-4 hover:border-white transition-all duration-300">
                 View Services
               </Link>
             </div>
