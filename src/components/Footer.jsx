@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo/footerLogo.png";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -34,15 +33,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
 
-          {/* Col 1 — Brand Logo */}
+          {/* Col 1 — Brand Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
               <NavLink to="/" className="inline-block group">
-                <img 
-                  src={logo} 
-                  alt="Eldec Limited Logo" 
-                  className="h-16 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 origin-left"
-                />
+                <h3 className="font-heading text-2xl font-bold text-white transition-colors duration-300 group-hover:text-[#F59E0B]">
+                  ELDEC Limited
+                </h3>
               </NavLink>
             </div>
             

@@ -37,14 +37,14 @@ function FadeIn({ children, delay = 0, className = "" }) {
 /* ── data ── */
 const standards = [
   { code: "BS 7671",       name: "IET Wiring Regulations",      priority: true },
-  { code: "IEC 60364",     name: "Electrical Installations",     priority: true },
-  { code: "KS 662",        name: "Wiring Code (Kenya)",          priority: false },
+  { code: "IEC 60364",     name: "Electrical Installations",    priority: true },
+  { code: "KS 662",        name: "Wiring Code (Kenya)",         priority: false },
   { code: "Energy Act 2019", name: "Kenya Energy Regulations",   priority: false },
-  { code: "IEC 61851",     name: "EV Charging Systems",          priority: false },
-  { code: "IEC 62196",     name: "EV Connectors",                priority: false },
-  { code: "NFPA 70",       name: "National Electrical Code",     priority: false },
-  { code: "UFC",           name: "Unified Facilities Criteria",  priority: false },
-  { code: "NFPA Codes",    name: "Fire & Life Safety",           priority: false },
+  { code: "IEC 61851",     name: "EV Charging Systems",         priority: false },
+  { code: "IEC 62196",     name: "EV Connectors",               priority: false },
+  { code: "NFPA 70",       name: "National Electrical Code",    priority: false },
+  { code: "UFC",           name: "Unified Facilities Criteria", priority: false },
+  { code: "NFPA Codes",    name: "Fire & Life Safety",          priority: false },
 ];
 
 const expertise = [
@@ -103,8 +103,8 @@ export default function About() {
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
-      {/* ══ HERO — White background with navy text ══ */}
-      <section className="relative bg-white pt-40 pb-32 overflow-hidden">
+      {/* ══ HERO — Off-White background with navy text ══ */}
+      <section className="relative bg-[#F8F4F0] pt-40 pb-32 overflow-hidden">
         <div
           className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
           style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
@@ -145,7 +145,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══ COMPANY OVERVIEW ══ */}
+      {/* ══ COMPANY OVERVIEW — White background ══ */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
@@ -157,6 +157,7 @@ export default function About() {
                 <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#0D2137] mb-8 leading-tight">
                   Engineering Solutions Built<br />to International Standards
                 </h2>
+                {/* Text box is Off-White, popping against White section */}
                 <div className="font-body text-[#0D2137] leading-relaxed text-justify space-y-5 border border-[#0D2137]/10 p-8 bg-[#F8F4F0]">
                   <p>
                     <span className="float-left font-heading text-7xl font-bold text-[#8B1A1A] leading-none mr-3 mt-1"
@@ -188,13 +189,15 @@ export default function About() {
 
             {/* Sidebar — 5 cols */}
             <div className="lg:col-span-5 space-y-6">
+
               <FadeIn delay={150}>
-                <div className="bg-[#0D2137] p-8">
-                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-6">At a Glance</h3>
+                <div className="bg-[#0D2137] p-8 mt-10 lg:mt-0">
+                  <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-white mb-6">At a Glance</h3>
                   <div className="space-y-5">
                     {expertise.map(({ years, area }) => (
                       <div key={area} className="flex items-center gap-5">
-                        <span className="font-heading text-3xl font-bold text-[#8B1A1A] min-w-[56px]">{years}</span>
+                        {/* Changed color from #8B1A1A to #F59E0B to match home page stats */}
+                        <span className="font-heading text-3xl font-bold text-[#F59E0B] min-w-[56px]">{years}</span>
                         <span className="font-body text-white text-sm leading-snug border-l border-white/10 pl-5">{area}</span>
                       </div>
                     ))}
@@ -203,12 +206,13 @@ export default function About() {
               </FadeIn>
 
               <FadeIn delay={220}>
-                <div className="border border-[#0D2137]/10 bg-white p-8">
+                {/* Sectors box changed to Off-White to contrast with White section */}
+                <div className="border border-[#0D2137]/10 bg-[#F8F4F0] p-8">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-5">Sectors We Serve</h3>
                   <div className="flex flex-wrap gap-2">
                     {sectors.map((s) => (
                       <span key={s}
-                        className="font-sans text-xs tracking-wide text-[#0D2137] border border-[#0D2137]/20 px-3 py-1.5 hover:border-[#8B1A1A] hover:text-[#8B1A1A] transition-colors duration-300">
+                        className="bg-white font-sans text-xs tracking-wide text-[#0D2137] border border-[#0D2137]/10 px-3 py-1.5 hover:border-[#8B1A1A] hover:text-[#8B1A1A] hover:shadow-sm transition-all duration-300">
                         {s}
                       </span>
                     ))}
@@ -220,7 +224,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══ MISSION & VISION ══ */}
+      {/* ══ MISSION & VISION — Off-White background ══ */}
       <section className="py-24 bg-[#F8F4F0]">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn className="text-center mb-16">
@@ -230,7 +234,7 @@ export default function About() {
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Mission */}
+            {/* Mission — White Card on Off-White background */}
             <FadeIn delay={80}>
               <div className="relative bg-white border border-[#0D2137]/10 p-10 h-full overflow-hidden group hover:border-[#8B1A1A] transition-all duration-500">
                 <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
@@ -253,7 +257,7 @@ export default function About() {
               </div>
             </FadeIn>
 
-            {/* Vision — Navy background */}
+            {/* Vision — Navy Card */}
             <FadeIn delay={180}>
               <div className="relative bg-[#0D2137] border border-white/10 p-10 h-full overflow-hidden group hover:border-[#8B1A1A]/50 transition-all duration-500">
                 <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
@@ -282,7 +286,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══ CORE VALUES ══ */}
+      {/* ══ CORE VALUES — White background ══ */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn className="text-center mb-16">
@@ -294,6 +298,7 @@ export default function About() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map(({ icon, title, desc }, i) => (
               <FadeIn key={title} delay={i * 100}>
+                {/* Off-White Cards on White background */}
                 <div className="group text-center p-8 border border-[#0D2137]/10 hover:border-[#8B1A1A] hover:shadow-xl hover:shadow-[#8B1A1A]/10 transition-all duration-500 relative overflow-hidden bg-[#F8F4F0]">
                   <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                   <div className="w-14 h-14 bg-white group-hover:bg-[#8B1A1A] flex items-center justify-center mx-auto mb-5 transition-colors duration-500">
@@ -346,12 +351,12 @@ export default function About() {
             <FadeIn delay={160}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Low Voltage Systems",    detail: "Design & Installation" },
-                  { label: "Medium Voltage",         detail: "Distribution & Protection" },
-                  { label: "EV Charging Standards",  detail: "IEC 61851 & 62196" },
-                  { label: "Military Facilities",    detail: "UFC Compliant Designs" },
-                  { label: "Solar & Off-Grid",       detail: "PV System Design" },
-                  { label: "Data Centers",           detail: "Tier 3 Design" },
+                  { label: "Low Voltage Systems",  detail: "Design & Installation" },
+                  { label: "Medium Voltage",       detail: "Distribution & Protection" },
+                  { label: "EV Charging Standards",detail: "IEC 61851 & 62196" },
+                  { label: "Military Facilities",  detail: "UFC Compliant Designs" },
+                  { label: "Solar & Off-Grid",     detail: "PV System Design" },
+                  { label: "Data Centers",         detail: "Tier 3 Design" },
                 ].map(({ label, detail }) => (
                   <div key={label} className="border border-white/10 p-5 hover:border-[#8B1A1A]/50 transition-colors duration-300 bg-white/5">
                     <div className="w-2 h-2 bg-[#8B1A1A] mb-3" />
@@ -365,7 +370,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══ STANDARDS & COMPLIANCE ══ */}
+      {/* ══ STANDARDS & COMPLIANCE — Off-White background ══ */}
       <section className="py-24 bg-[#F8F4F0]">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn className="text-center mb-16">
@@ -381,6 +386,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {standards.map(({ code, name, priority }, i) => (
               <FadeIn key={code} delay={i * 60}>
+                {/* White Cards on Off-White background */}
                 <div className={`flex items-center gap-5 p-5 border transition-all duration-300 hover:shadow-lg group ${
                   priority ? "border-[#8B1A1A] bg-white" : "border-[#0D2137]/10 bg-white hover:border-[#8B1A1A]/40"
                 }`}>
@@ -407,7 +413,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══ CTA ══ */}
+      {/* ══ CTA — Deep Red background ══ */}
       <section className="relative bg-[#8B1A1A] py-20 overflow-hidden">
         <div className="absolute right-0 top-0 h-full w-1/2 opacity-10"
           style={{ backgroundImage: "repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)", backgroundSize: "20px 20px" }} />

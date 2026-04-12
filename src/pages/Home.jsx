@@ -211,14 +211,15 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          STATS BAR — Navy background with white text
+          STATS BAR — Navy background with high-visibility text
       ══════════════════════════════════════════ */}
       <section className="bg-[#0D2137]">
         <div className="max-w-7xl mx-auto px-6 py-0">
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
             {stats.map(({ value, suffix, label }) => (
               <div key={label} className="py-10 px-8 text-center">
-                <div className="font-heading text-4xl lg:text-5xl font-bold text-[#8B1A1A] mb-2">
+                {/* Changed from text-[#8B1A1A] to text-[#F59E0B] for visibility */}
+                <div className="font-heading text-4xl lg:text-5xl font-bold text-[#F59E0B] mb-2">
                   <Counter target={value} suffix={suffix} />
                 </div>
                 <div className="font-sans text-xs tracking-[0.15em] uppercase text-white">
