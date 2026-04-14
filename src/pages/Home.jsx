@@ -218,7 +218,6 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
             {stats.map(({ value, suffix, label }) => (
               <div key={label} className="py-10 px-8 text-center">
-                {/* Changed from text-[#8B1A1A] to text-[#F59E0B] for visibility */}
                 <div className="font-heading text-4xl lg:text-5xl font-bold text-[#F59E0B] mb-2">
                   <Counter target={value} suffix={suffix} />
                 </div>
@@ -390,7 +389,7 @@ export default function Home() {
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                   <div className="flex items-start justify-between mb-6">
                     <span className="font-heading text-5xl font-bold text-white/10 leading-none">{num}</span>
-                    <span className="font-sans text-xs tracking-wider uppercase text-[#F59E0B] border border-[#F59E0B]/30 px-3 py-1">
+                    <span className="font-sans font-bold text-xs tracking-wider uppercase text-[#F59E0B] border border-[#F59E0B]/30 px-3 py-1">
                       {tag}
                     </span>
                   </div>

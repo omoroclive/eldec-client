@@ -43,13 +43,13 @@ export default function Footer() {
               </NavLink>
             </div>
             
-            <p className="font-body text-white/60 text-sm leading-relaxed mb-6 mt-2">
+            <p className="font-body text-white text-sm leading-relaxed mb-6 mt-2">
               Professional electrical engineering services — design,
               consultancy, installation and supervision across Africa and
               beyond.
             </p>
             <div className="w-12 h-[2px] bg-[#8B1A1A]" />
-            <p className="font-sans text-white/40 text-xs mt-4 tracking-wider uppercase">
+            <p className="font-sans text-white text-xs mt-4 tracking-wider uppercase">
               Incorporated in Kenya, 2025
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function Footer() {
                 <li key={to}>
                   <NavLink
                     to={to}
-                    className="font-body text-white/60 text-sm hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+                    className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-4 h-[1px] bg-[#8B1A1A] group-hover:w-6 transition-all duration-300" />
                     {label}
@@ -81,7 +81,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {services.map((s) => (
-                <li key={s} className="font-body text-white/60 text-sm flex items-start gap-2">
+                <li key={s} className="font-body text-white text-sm flex items-start gap-2">
                   <span className="w-4 h-[1px] bg-[#8B1A1A] mt-[9px] flex-shrink-0" />
                   {s}
                 </li>
@@ -103,7 +103,7 @@ export default function Footer() {
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                   </svg>
                 </span>
-                <span className="font-body text-white/60 text-sm leading-relaxed">
+                <span className="font-body text-white text-sm leading-relaxed">
                   5th Floor Room 5A, Timschack House,<br />Ngong Road, Dagoretti
                 </span>
               </li>
@@ -118,13 +118,13 @@ export default function Footer() {
                 <div className="flex flex-col gap-1.5">
                   <a
                     href="mailto:designs@eldecengineering.com"
-                    className="font-body text-white/60 text-sm hover:text-[#F59E0B] transition-colors duration-300"
+                    className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300"
                   >
                     designs@eldecengineering.com
                   </a>
                   <a
                     href="mailto:designs.eldec@gmail.com"
-                    className="font-body text-white/40 text-sm hover:text-[#F59E0B] transition-colors duration-300"
+                    className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300"
                   >
                     designs.eldec@gmail.com
                   </a>
@@ -140,7 +140,7 @@ export default function Footer() {
                 </span>
                 <a
                   href="tel:+254721387121"
-                  className="font-body text-white/60 text-sm hover:text-white transition-colors duration-300"
+                  className="font-body text-white text-sm hover:text-[#F59E0B] transition-colors duration-300"
                 >
                   +254 721 387 121
                 </a>
@@ -152,10 +152,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-sans text-white/30 text-xs tracking-wider">
+          <p className="font-sans text-white text-xs tracking-wider">
             &copy; {year} ELDEC Limited. All rights reserved.
           </p>
-          <p className="font-sans text-white/20 text-xs tracking-wider uppercase">
+          <p className="font-sans text-white text-xs tracking-wider uppercase">
             Electrical Engineering &middot; Consultancy &middot; Design &middot; Installation
           </p>
         </div>
