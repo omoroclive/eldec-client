@@ -317,7 +317,7 @@ export default function Services() {
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                   <div className="flex items-start justify-between mb-4">
                     <span className="font-heading text-4xl font-bold text-white/10 leading-none">{num}</span>
-                    <span className={`font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 border ${tagColors[tag] || "bg-white/10 text-white/50 border-white/20"}`}>
+                    <span className={`font-sans text-bold tracking-wider uppercase px-2.5 py-1 border ${tagColors[tag] || "bg-white/10 text-white/50 border-white/20"}`}>
                       {tag}
                     </span>
                   </div>
