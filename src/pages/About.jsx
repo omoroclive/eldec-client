@@ -360,7 +360,7 @@ export default function About() {
                 ].map(({ label, detail }) => (
                   <div key={label} className="border border-white/10 p-5 hover:border-[#8B1A1A]/50 transition-colors duration-300 bg-white/5">
                     <div className="w-2 h-2 bg-[#8B1A1A] mb-3" />
-                    <p className="font-sans text-xs tracking-wide uppercase text-white/80 mb-1">{label}</p>
+                    <p className="font-sans text-xs  tracking-wide uppercase text-white/80 mb-1">{label}</p>
                     <p className="font-body text-white/40 text-xs">{detail}</p>
                   </div>
                 ))}
