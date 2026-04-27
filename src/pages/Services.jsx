@@ -361,12 +361,12 @@ export default function Services() {
               paddingLeft: "20px",
             }}
           >
-            <span className="font-bold text-white">ELDEC Limited</span> delivers
-            electrical engineering consultancy, design, installation and project
-            supervision across Africa —
+            <span className="font-bold text-white">ELDEC Limited</span> From 
+            electrical design to specialised installations —
             <span className="text-[#F59E0B] font-medium">
               {" "}
-              built to international standards, every time.
+              ELDEC delivers
+            engineering solutions that are safe, compliant and built to last.
             </span>
           </p>
 
