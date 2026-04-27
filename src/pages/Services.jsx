@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 // ── Image Imports ──
-import imgHeroBg from "../assets/logo/powerstation2.jpg";
+import imgHeroBg from "../assets/logo/solar2.jpg";
 import imgEV from "../assets/logo/evcharging.jpg";
 import imgDataCenter from "../assets/logo/datacenter.png";
 import imgSolar from "../assets/logo/solar1.jpg";
