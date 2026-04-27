@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import imgHeroBg from "../assets/logo/contact.jpg";
 
 /* ── in-view hook ── */
 function useInView(threshold = 0.12) {
@@ -168,57 +169,161 @@ export default function Contact() {
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
-      {/* ══ HERO — White background with navy text (matching home page) ══ */}
-      <section className="relative bg-white pt-40 pb-32 overflow-hidden">
+      {/* ══ HERO — Aligned with Home, Services & About Pages ══ */}
+      <section
+        className="relative overflow-hidden"
+        style={{ minHeight: "85vh" }}
+      >
+        {/* Background image */}
         <div
-          className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
-          style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-[8000ms] hover:scale-105"
           style={{
-            backgroundImage:
-              "linear-gradient(#0D2137 1px,transparent 1px),linear-gradient(90deg,#0D2137 1px,transparent 1px)",
-            backgroundSize: "70px 70px",
+            backgroundImage: `url(${imgHeroBg})`,
+            backgroundPosition: "center 30%",
+            filter: "brightness(0.4) grayscale(10%)",
           }}
         />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+        {/* Gradient overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(105deg, rgba(13,33,55,0.98) 0%, rgba(13,33,55,0.85) 40%, rgba(139,26,26,0.3) 100%)",
+          }}
+        />
+
+        {/* Subtle grid texture */}
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* Crimson left-edge accent bar */}
+        <div className="absolute top-0 left-0 h-full w-[4px] bg-[#8B1A1A] z-20" />
+
+        {/* Floating particles effect */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute bg-white/10 rounded-full animate-float"
+              style={{
+                width: `${Math.random() * 3 + 1}px`,
+                height: `${Math.random() * 3 + 1}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${Math.random() * 10 + 5}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Main Hero Content */}
+        <div
+          className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col justify-center"
+          style={{
+            minHeight: "85vh",
+            paddingTop: "160px",
+            paddingBottom: "80px",
+          }}
+        >
+          {/* Eyebrow */}
           <div
-            className="flex items-center gap-3 mb-6"
+            className="flex items-center gap-4 mb-8"
             style={{ animation: "fadeDown 0.7s ease both" }}
           >
-            <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A]">
+            <span className="w-10 h-[2px] bg-[#8B1A1A]" />
+            <span
+              className="font-sans text-[12px] md:text-[14px] tracking-[0.3em] uppercase text-[#F59E0B] font-bold"
+              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
+            >
               Get in Touch
             </span>
           </div>
+
+          {/* Main Heading */}
           <h1
-            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0D2137] leading-tight mb-6"
-            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
+            className="font-heading font-bold text-white leading-[0.95] mb-8"
+            style={{
+              fontSize: "clamp(48px, 9vw, 110px)",
+              animation: "fadeUp 0.8s ease 0.1s both",
+              textShadow: "0 10px 30px rgba(0,0,0,0.3)",
+            }}
           >
-            Start Your <span className="text-[#8B1A1A]">Project</span>
-            <br />
-            <span className="text-[#0D2137]/25">With Us</span>
+            Start Your <br />
+            <span className="text-[#8B1A1A]">Project</span> <br />
+          
+            <span className="text-white/90">With Us</span>
           </h1>
+
+          {/* Styled Paragraph */}
           <p
-            className="font-body text-[#0D2137] text-lg max-w-xl leading-relaxed"
-            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
+            className="font-sans text-white/90 text-lg md:text-xl max-w-2xl mb-12"
+            style={{
+              animation: "fadeUp 0.8s ease 0.25s both",
+              lineHeight: "1.6",
+              fontWeight: "400",
+              letterSpacing: "0.015em",
+              borderLeft: "2px solid rgba(139, 26, 26, 0.5)",
+              paddingLeft: "20px",
+            }}
           >
-            Tell us about your electrical engineering project and our team will
+            <span className="font-bold text-white">ELDEC Limited</span> Tell 
+            us about your electrical engineering project and our team will
             get back to you within 24 hours.
+            <span className="text-[#F59E0B] font-medium">
+              {" "}
+              built to international standards, every time.
+            </span>
           </p>
+
+          {/* Buttons */}
+          <div
+            className="flex flex-wrap gap-5"
+            style={{ animation: "fadeUp 0.8s ease 0.4s both" }}
+          >
+            <a
+              href="#contact-form"
+              className="group relative font-sans text-[12px] tracking-widest uppercase bg-[#8B1A1A] text-white px-10 py-5 hover:bg-[#a61f1f] transition-all duration-300 active:scale-95 shadow-lg font-bold overflow-hidden"
+            >
+              <span className="relative z-10">Start a Project</span>
+              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <span className="absolute inset-0 flex items-center justify-center text-[#8B1A1A] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300">
+                Start a Project →
+              </span>
+            </a>
+            <a
+              href="mailto:designs@eldecengineering.com"
+              className="font-sans text-[12px] tracking-widest uppercase border border-white/60 text-white px-10 py-5 transition-all duration-300 hover:border-[#F59E0B] hover:text-[#F59E0B] backdrop-blur-sm font-bold hover:scale-105"
+            >
+              Email Us Directly
+            </a>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-2 bg-white/50 rounded-full mt-2 animate-pulse" />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ══ MAIN CONTENT ══ */}
-      <section className="py-24 bg-[#F8F4F0]">
+      <section id="contact-form" className="py-24 bg-[#F8F4F0]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16">
 
             {/* ── FORM — 7 cols ── */}
             <div className="lg:col-span-7">
               <FadeIn>
-                <div className="bg-white border border-[#0D2137]/10 p-8 md:p-12">
+                <div className="bg-white border border-[#0D2137]/10 p-8 md:p-12 shadow-xl">
                   <h2 className="font-heading text-3xl font-bold text-[#0D2137] mb-2">
                     Send Us a Message
                   </h2>
@@ -228,7 +333,7 @@ export default function Contact() {
 
                   {/* Success */}
                   {status === "success" && (
-                    <div className="bg-[#EAF3DE] border border-[#97C459] p-6 mb-8 flex items-start gap-4">
+                    <div className="bg-[#EAF3DE] border border-[#97C459] p-6 mb-8 flex items-start gap-4 animate-fadeIn">
                       <div className="w-10 h-10 bg-[#3B6D11] flex items-center justify-center flex-shrink-0">
                         <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
@@ -248,7 +353,7 @@ export default function Contact() {
 
                   {/* Error */}
                   {status === "error" && (
-                    <div className="bg-[#FCEBEB] border border-[#F09595] p-6 mb-8 flex items-start gap-4">
+                    <div className="bg-[#FCEBEB] border border-[#F09595] p-6 mb-8 flex items-start gap-4 animate-fadeIn">
                       <div className="w-10 h-10 bg-[#A32D2D] flex items-center justify-center flex-shrink-0">
                         <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
                           <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
@@ -407,14 +512,14 @@ export default function Contact() {
 
               {/* Contact info — Navy background */}
               <FadeIn delay={100}>
-                <div className="bg-[#0D2137] p-8">
+                <div className="bg-[#0D2137] p-8 shadow-xl">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B] mb-7">
                     Contact Information
                   </h3>
                   <div className="space-y-6">
                     {contactDetails.map(({ icon, label, value, sub, link }) => (
-                      <div key={label} className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-[#8B1A1A] flex items-center justify-center flex-shrink-0 text-white">
+                      <div key={label} className="flex items-start gap-4 group">
+                        <div className="w-10 h-10 bg-[#8B1A1A] flex items-center justify-center flex-shrink-0 text-white group-hover:scale-110 transition-transform duration-300">
                           {icon}
                         </div>
                         <div>
@@ -441,7 +546,7 @@ export default function Contact() {
 
               {/* What happens next — White card on cream */}
               <FadeIn delay={180}>
-                <div className="border border-[#0D2137]/10 bg-white p-8">
+                <div className="border border-[#0D2137]/10 bg-white p-8 shadow-xl">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-6">
                     What Happens Next
                   </h3>
@@ -452,8 +557,8 @@ export default function Contact() {
                       { step: "03", title: "Proposal & quotation",      desc: "We prepare a tailored engineering proposal and cost estimate." },
                       { step: "04", title: "Project kickoff",           desc: "On your approval, we mobilise our team and begin work." },
                     ].map(({ step, title, desc }) => (
-                      <div key={step} className="flex gap-4">
-                        <span className="font-heading text-2xl font-bold text-[#8B1A1A]/20 leading-none flex-shrink-0 w-8">
+                      <div key={step} className="flex gap-4 group">
+                        <span className="font-heading text-2xl font-bold text-[#8B1A1A]/20 leading-none flex-shrink-0 w-8 group-hover:text-[#8B1A1A]/40 transition-colors">
                           {step}
                         </span>
                         <div>
@@ -468,7 +573,7 @@ export default function Contact() {
 
               {/* Standards badge — Red background */}
               <FadeIn delay={240}>
-                <div className="bg-[#8B1A1A] p-8 relative overflow-hidden">
+                <div className="bg-[#8B1A1A] p-8 relative overflow-hidden shadow-xl">
                   <div
                     className="absolute inset-0 opacity-10"
                     style={{
@@ -477,8 +582,8 @@ export default function Contact() {
                     }}
                   />
                   <div className="relative z-10">
-                    <div className="w-10 h-10 border-2 border-white/40 flex items-center justify-center mb-5">
-                      <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+                    <div className="w-12 h-12 border-2 border-white/40 flex items-center justify-center mb-5 group hover:scale-110 transition-transform duration-300">
+                      <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
                         <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
                       </svg>
                     </div>
@@ -499,12 +604,26 @@ export default function Contact() {
 
       <style>{`
         @keyframes fadeUp {
-          from { opacity:0; transform:translateY(30px); }
-          to   { opacity:1; transform:translateY(0); }
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         @keyframes fadeDown {
-          from { opacity:0; transform:translateY(-20px); }
-          to   { opacity:1; transform:translateY(0); }
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0; }
+          50% { transform: translateY(-20px) translateX(10px); opacity: 0.5; }
+        }
+        .animate-float {
+          animation: float linear infinite;
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease forwards;
         }
       `}</style>
     </main>

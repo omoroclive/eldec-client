@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 
 // ── Import project images ──
 import imgPanel from "../assets/logo/image3.jpeg";
-import imgHeroBg from "../assets/logo/powerstation3.jpg";
+import imgHeroBg from "../assets/logo/powerstation2.jpg";   // ← your real HV substation photo
+import imgAbout from "../assets/logo/about.jpg";             // ← lightbulb/growth chart
+import imgEVCharging from "../assets/logo/evcharging.jpg";   // ← EV charging station
+import imgDataCenter from "../assets/logo/datacenter.png"; // ← data center
+import imgLines from "../assets/logo/image4.jpeg";         // ← power lines
+import imgFuelStation from "../assets/logo/fuelstation.jpg"; // ← fuel station
+import imgHybrid from "../assets/logo/hybridsystem.jpg"; // ← hybrid system
+import imgSolarInstallation from "../assets/logo/solar2.jpg"; // ← solar installation 
 
 /* ── tiny hook: triggers when element enters viewport ── */
 function useInView(threshold = 0.15) {
@@ -70,116 +77,50 @@ function FadeIn({ children, delay = 0, className = "" }) {
 
 /* ── DATA ── */
 const stats = [
-  { value: 12, suffix: "+", label: "Years Experience" },
-  { value: 5, suffix: "+", label: "Countries" },
-  { value: 12, suffix: "+", label: "Major Projects" },
-  { value: 1, suffix: "", label: "Lead Engineer" },
+  { value: 12, suffix: "+", label: "Years Experience", icon: "⚡" },
+  { value: 5,  suffix: "+", label: "Countries",        icon: "🌍" },
+  { value: 12, suffix: "+", label: "Major Projects",   icon: "🏗️" },
+  { value: 1,  suffix: "",  label: "Lead Engineer",    icon: "👨‍💻" },
 ];
 
 const services = [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-14 h-14 text-[#8B1A1A]">
-        <path
-          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeDasharray="4 4"
-          opacity="0.25"
-        />
-        <path
-          d="M7 12H11L13 6L17 18L19 12H22"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.25" />
+        <path d="M7 12H11L13 6L17 18L19 12H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <circle cx="5" cy="12" r="2" fill="currentColor" />
         <circle cx="12" cy="12" r="8" fill="currentColor" fillOpacity="0.05" />
       </svg>
     ),
     title: "Electrical Design & Consultancy",
     desc: "Load assessments, power distribution design, LV & MV systems, transformer and switchgear design, earthing, lightning protection and lighting layouts.",
-    items: [
-      "Low & Medium Voltage Systems",
-      "Transformer & Switchgear Design",
-      "Earthing & Lightning Protection",
-      "Lighting & Small Power Layouts",
-    ],
+    items: ["Low & Medium Voltage Systems", "Transformer & Switchgear Design", "Earthing & Lightning Protection", "Lighting & Small Power Layouts"],
   },
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-14 h-14 text-[#8B1A1A]">
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="3"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          fill="currentColor"
-          fillOpacity="0.08"
-        />
-        <path
-          d="M8 12L11 15L16 9"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M3 9H21M9 3V21"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeDasharray="3 4"
-          opacity="0.3"
-        />
+        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.08" />
+        <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3 9H21M9 3V21" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 4" opacity="0.3" />
       </svg>
     ),
     title: "Installation & Supervision",
     desc: "End-to-end installation supervision, site inspection, testing, commissioning and certification with full contractor technical support.",
-    items: [
-      "Site Inspection & Testing",
-      "Commissioning & Certification",
-      "Project Coordination",
-      "Quality Assurance & Compliance",
-    ],
+    items: ["Site Inspection & Testing", "Commissioning & Certification", "Project Coordination", "Quality Assurance & Compliance"],
   },
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-14 h-14 text-[#8B1A1A]">
-        <path
-          d="M12 2.5L20.5 7.5V16.5L12 21.5L3.5 16.5V7.5L12 2.5Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          fill="currentColor"
-          fillOpacity="0.08"
-        />
-        <path
-          d="M12 7.5L16.5 10.5V14.5L12 17.5L7.5 14.5V10.5L12 7.5Z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M12 2.5L20.5 7.5V16.5L12 21.5L3.5 16.5V7.5L12 2.5Z" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.08" />
+        <path d="M12 7.5L16.5 10.5V14.5L12 17.5L7.5 14.5V10.5L12 7.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <circle cx="12" cy="12.5" r="1.5" fill="currentColor" />
-        <path
-          d="M12 2.5V7.5M20.5 16.5L16.5 14.5M3.5 16.5L7.5 14.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          opacity="0.4"
-        />
+        <path d="M12 2.5V7.5M20.5 16.5L16.5 14.5M3.5 16.5L7.5 14.5" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
       </svg>
     ),
     title: "Specialized Engineering",
     desc: "Data centers, EV charging stations, military & security facilities, fuel and hazardous area installations, industrial plants and off-grid power systems.",
-    items: [
-      "EV Charging Stations",
-      "Data Centers",
-      "Hazardous Area Installations",
-      "Off-Grid Solar Power Systems",
-    ],
+    items: ["EV Charging Stations", "Data Centers", "Hazardous Area Installations", "Off-Grid Solar Power Systems"],
   },
 ];
 
@@ -190,6 +131,7 @@ const projects = [
     location: "Kenya & Rwanda",
     desc: "Design and installation of EV charging infrastructure with cumulative capacity of 7,500 kW including transformers, LV distribution and DC fast chargers.",
     tag: "Energy",
+    image: imgEVCharging, // assigned dynamically below via imgEVCharging
   },
   {
     num: "02",
@@ -197,6 +139,7 @@ const projects = [
     location: "Mombasa, Kenya",
     desc: "Tier 3 data center design — USD 2.5M project including RMU systems, transformers, UPS, generators and dual power supply configuration.",
     tag: "Data Center",
+    image: imgDataCenter,
   },
   {
     num: "03",
@@ -204,6 +147,7 @@ const projects = [
     location: "Laikipia, Kenya",
     desc: "KES 442M electrical design and supervision for accommodation, catering and support facilities including street lighting and fire alarm systems.",
     tag: "Infrastructure",
+    image: imgLines,
   },
   {
     num: "04",
@@ -211,53 +155,47 @@ const projects = [
     location: "Remote Facility",
     desc: "80 kWp solar PV system including inverters, protection systems, charge controllers and full commissioning in a remote off-grid facility.",
     tag: "Solar",
+    image: imgSolarInstallation,
   },
 ];
 
 const whyUs = [
-  {
-    title: "Experienced Leadership",
-    desc: "Led by a Professional Electrical Engineer with 12+ years across Africa and the Middle East.",
-  },
-  {
-    title: "International Standards",
-    desc: "Every project designed to BS 7671, IEC 60364, NFPA and local KS 662 standards.",
-  },
-  {
-    title: "Strong Safety Compliance",
-    desc: "Safety of life and protection of property is at the core of every engineering decision.",
-  },
-  {
-    title: "Proven Project History",
-    desc: "Successfully delivered residential, commercial, industrial, military and infrastructure projects.",
-  },
-  {
-    title: "Reliable Supervision",
-    desc: "Full site inspection, testing, commissioning and certification on every project.",
-  },
-  {
-    title: "Cost-Effective Solutions",
-    desc: "High-quality engineering that meets your budget without compromising on compliance.",
-  },
+  { icon: "🏆", title: "Experienced Leadership",    desc: "Led by a Professional Electrical Engineer with 12+ years across Africa and the Middle East." },
+  { icon: "📋", title: "International Standards",   desc: "Every project designed to BS 7671, IEC 60364, NFPA and local KS 662 standards." },
+  { icon: "🛡️", title: "Strong Safety Compliance", desc: "Safety of life and protection of property is at the core of every engineering decision." },
+  { icon: "📊", title: "Proven Project History",    desc: "Successfully delivered residential, commercial, industrial, military and infrastructure projects." },
+  { icon: "🔧", title: "Reliable Supervision",      desc: "Full site inspection, testing, commissioning and certification on every project." },
+  { icon: "💰", title: "Cost-Effective Solutions",  desc: "High-quality engineering that meets your budget without compromising on compliance." },
 ];
 
 export default function Home() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const projectsWithImages = projects.map((p) =>
+    p.num === "01" ? { ...p, image: imgEVCharging } : p
+  );
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projectsWithImages
+      : projectsWithImages.filter((p) => p.tag === activeFilter);
+
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
+
       {/* ══════════════════════════════════════════
-          HERO — Adjusted Padding & Font Clarity
+          HERO
       ══════════════════════════════════════════ */}
-      <section
-        className="relative overflow-hidden"
-        style={{ minHeight: "95vh" }}
-      >
-        {/* Background image */}
+      <section className="relative overflow-hidden" style={{ minHeight: "95vh" }}>
+
+        {/* Real HV substation background */}
         <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-[8000ms] hover:scale-105"
+          className="absolute inset-0 bg-cover bg-center will-change-transform"
           style={{
             backgroundImage: `url(${imgHeroBg})`,
-            backgroundPosition: "center 30%",
-            filter: "brightness(0.4) grayscale(10%)",
+            backgroundPosition: "center 40%",
+            filter: "brightness(0.35) grayscale(15%)",
+            transform: "translateZ(0)",
           }}
         />
 
@@ -266,13 +204,13 @@ export default function Home() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(105deg, rgba(13,33,55,0.98) 0%, rgba(13,33,55,0.85) 40%, rgba(139,26,26,0.3) 100%)",
+              "linear-gradient(105deg, rgba(13,33,55,0.98) 0%, rgba(13,33,55,0.82) 45%, rgba(139,26,26,0.38) 100%)",
           }}
         />
 
-        {/* Subtle grid texture */}
+        {/* Grid texture */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
@@ -280,32 +218,40 @@ export default function Home() {
           }}
         />
 
-        {/* Crimson left-edge accent bar */}
+        {/* Floating particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute bg-white/10 rounded-full animate-float"
+              style={{
+                width:  `${Math.random() * 4 + 2}px`,
+                height: `${Math.random() * 4 + 2}px`,
+                top:    `${Math.random() * 100}%`,
+                left:   `${Math.random() * 100}%`,
+                animationDelay:    `${Math.random() * 5}s`,
+                animationDuration: `${Math.random() * 10 + 5}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Crimson left-edge accent */}
         <div className="absolute top-0 left-0 h-full w-[4px] bg-[#8B1A1A] z-20" />
-        {/* Main Hero Content */}
+
+        {/* Content */}
         <div
           className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col justify-center"
-          style={{
-            minHeight: "95vh",
-            paddingTop: "160px",
-            paddingBottom: "80px",
-          }}
+          style={{ minHeight: "95vh", paddingTop: "160px", paddingBottom: "80px" }}
         >
-          {/* Eyebrow */}
-          <div
-            className="flex items-center gap-4 mb-8"
-            style={{ animation: "fadeDown 0.7s ease both" }}
-          >
-            <span className="w-10 h-[2px] bg-[#8B1A1A]" />
-            <span
-              className="font-sans text-[12px] md:text-[14px] tracking-[0.3em] uppercase text-[#F59E0B] font-bold"
-              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
-            >
+          <div className="flex items-center gap-4 mb-8" style={{ animation: "fadeDown 0.7s ease both" }}>
+            <span className="w-10 h-[2px] bg-[#8B1A1A] animate-pulse" />
+            <span className="font-sans text-[12px] md:text-[14px] tracking-[0.3em] uppercase text-[#F59E0B] font-bold"
+              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
               Professional Electrical Engineering
             </span>
           </div>
 
-          {/* Main Heading */}
           <h1
             className="font-heading font-bold text-white leading-[0.95] mb-8"
             style={{
@@ -315,49 +261,57 @@ export default function Home() {
             }}
           >
             Powering <br />
-            <span className="text-[#8B1A1A]">Safe</span> &amp; <br />
+            <span className="text-[#8B1A1A] relative inline-block">
+              Safe
+              <svg className="absolute -bottom-2 left-0 w-full h-[3px]" viewBox="0 0 100 3" preserveAspectRatio="none">
+                <path d="M0 1.5 L100 1.5" stroke="#8B1A1A" strokeWidth="2" strokeDasharray="5 5" />
+              </svg>
+            </span>
+            &amp; <br />
             Reliable <br />
             <span className="text-white/90">Infrastructure</span>
           </h1>
 
-          {/* FIXED: Styled Paragraph to align with Engineering Aesthetic */}
           <p
             className="font-sans text-white/90 text-lg md:text-xl max-w-2xl mb-12"
             style={{
               animation: "fadeUp 0.8s ease 0.25s both",
               lineHeight: "1.6",
               fontWeight: "400",
-              letterSpacing: "0.015em", // Subtle spacing for better legibility
-              borderLeft: "2px solid rgba(139, 26, 26, 0.5)", // Small accent border to anchor the text
+              letterSpacing: "0.015em",
+              borderLeft: "2px solid rgba(139, 26, 26, 0.5)",
               paddingLeft: "20px",
             }}
           >
-            <span className="font-bold text-white">ELDEC Limited</span> delivers
-            electrical engineering consultancy, design, installation and project
-            supervision across Africa —
-            <span className="text-[#F59E0B] font-medium">
-              {" "}
-              built to international standards, every time.
-            </span>
+            <span className="font-bold text-white">ELDEC Limited</span> delivers electrical
+            engineering consultancy, design, installation and project supervision across Africa —
+            <span className="text-[#F59E0B] font-medium"> built to international standards, every time.</span>
           </p>
 
-          {/* Buttons */}
-          <div
-            className="flex flex-wrap gap-5"
-            style={{ animation: "fadeUp 0.8s ease 0.4s both" }}
-          >
+          <div className="flex flex-wrap gap-5" style={{ animation: "fadeUp 0.8s ease 0.4s both" }}>
             <Link
               to="/contact"
-              className="font-sans text-[12px] tracking-widest uppercase bg-[#8B1A1A] text-white px-10 py-5 hover:bg-[#a61f1f] transition-all duration-300 active:scale-95 shadow-lg font-bold"
+              className="group relative font-sans text-[12px] tracking-widest uppercase bg-[#8B1A1A] text-white px-10 py-5 hover:bg-[#a61f1f] transition-all duration-300 active:scale-95 shadow-lg font-bold overflow-hidden"
             >
-              Start a Project
+              <span className="relative z-10">Start a Project</span>
+              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <span className="absolute inset-0 flex items-center justify-center text-[#8B1A1A] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300">
+                Start a Project →
+              </span>
             </Link>
             <Link
               to="/services"
-              className="font-sans text-[12px] tracking-widest uppercase border border-white/60 text-white px-10 py-5 transition-all duration-300 hover:border-[#F59E0B] hover:text-[#F59E0B] backdrop-blur-sm font-bold"
+              className="font-sans text-[12px] tracking-widest uppercase border border-white/60 text-white px-10 py-5 transition-all duration-300 hover:border-[#F59E0B] hover:text-[#F59E0B] backdrop-blur-sm font-bold hover:scale-105"
             >
               Our Services
             </Link>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-2 bg-white/50 rounded-full mt-2 animate-pulse" />
+            </div>
           </div>
         </div>
       </section>
@@ -365,21 +319,22 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           STATS BAR
       ══════════════════════════════════════════ */}
-      <section
-        className="relative z-10"
-        style={{
-          background: "rgba(13,33,55,1)",
-          borderTop: "1px solid rgba(255,255,255,0.1)",
-        }}
-      >
+      <section className="relative z-10 py-8 bg-gradient-to-b from-[#F8F4F0] to-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
-            {stats.map(({ value, suffix, label }) => (
-              <div key={label} className="py-12 px-8 text-center">
-                <div className="font-heading text-4xl lg:text-5xl font-bold text-[#F59E0B] mb-2">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map(({ value, suffix, label, icon }, i) => (
+              <div
+                key={label}
+                className="group bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#0D2137]/05"
+                style={{ animation: `fadeUp 0.6s ease ${i * 0.1}s both` }}
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-[#8B1A1A]/10 to-[#8B1A1A]/5 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">{icon}</span>
+                </div>
+                <div className="font-heading text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#8B1A1A] to-[#a61f1f] bg-clip-text text-transparent mb-2">
                   <Counter target={value} suffix={suffix} />
                 </div>
-                <div className="font-sans text-xs tracking-[0.15em] uppercase text-white/70">
+                <div className="font-sans text-xs tracking-[0.15em] uppercase text-[#0D2137]/60">
                   {label}
                 </div>
               </div>
@@ -389,9 +344,10 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          ABOUT SECTION
+          ABOUT — now uses imgAbout
       ══════════════════════════════════════════ */}
-      <section className="py-24 bg-[#F8F4F0]">
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#8B1A1A]/5 to-transparent" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
@@ -400,38 +356,55 @@ export default function Home() {
               </span>
               <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137] leading-tight mb-6">
                 Engineering Excellence <br />
-                <span className="text-[#8B1A1A]">Built on Standards</span>
+                <span className="text-[#8B1A1A] relative inline-block">
+                  Built on Standards
+                  <svg className="absolute -bottom-2 left-0 w-full" height="3" viewBox="0 0 200 3">
+                    <path d="M0 1.5 L200 1.5" stroke="#8B1A1A" strokeWidth="2" strokeDasharray="10 10" />
+                  </svg>
+                </span>
               </h2>
-              <p className="font-body text-[#0D2137] leading-relaxed mb-4 text-justify">
-                ELDEC Limited is a private limited company incorporated in Kenya
-                in 2025 to provide professional Electrical Engineering Services,
-                Consultancy, Design, and Project Supervision.
-              </p>
+              <div className="space-y-4 text-[#0D2137] leading-relaxed">
+                <p className="text-justify">
+                  ELDEC Limited is a private limited company incorporated in Kenya in 2025 to
+                  provide professional Electrical Engineering Services, Consultancy, Design,
+                  and Project Supervision.
+                </p>
+                <p className="text-justify text-[#0D2137]/70">
+                  With a commitment to international standards and local expertise, we deliver
+                  solutions that prioritize safety, reliability, and long-term operational efficiency.
+                </p>
+              </div>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-3 font-sans text-sm tracking-widest uppercase text-[#8B1A1A] group"
+                className="inline-flex items-center gap-3 mt-8 font-sans text-sm tracking-widest uppercase text-[#8B1A1A] group"
               >
                 <span>Learn More About Us</span>
                 <span className="w-8 h-[2px] bg-[#8B1A1A] group-hover:w-14 transition-all duration-300" />
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </FadeIn>
 
             <FadeIn delay={150}>
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#8B1A1A]/20" />
+              <div className="relative group">
+                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#8B1A1A]/20 group-hover:border-[#8B1A1A]/40 transition-all duration-500" />
+                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-[#8B1A1A]/20 group-hover:border-[#8B1A1A]/40 transition-all duration-500" />
                 <div className="absolute top-0 left-0 w-1 h-full bg-[#8B1A1A] z-10" />
-                <div className="overflow-hidden">
+                <div className="overflow-hidden relative">
+                  {/* ── about.jpg: lightbulb + growth chart ── */}
                   <img
-                    src={imgPanel}
-                    alt="ELDEC LV Panel"
-                    className="w-full h-[480px] object-cover object-center hover:scale-105 transition-transform duration-700"
+                    src={imgAbout}
+                    alt="ELDEC Engineering Vision — Powering Growth"
+                    className="w-full h-[480px] object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0D2137]/80 backdrop-blur-sm px-6 py-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D2137] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#0D2137]/90 backdrop-blur-sm px-6 py-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     <p className="font-sans text-xs tracking-[0.2em] uppercase text-[#F59E0B]">
-                      Real Project Work
+                      Our Vision
                     </p>
                     <p className="font-body text-white text-sm mt-1">
-                      LV Distribution Board — Commissioned & Certified
+                      Powering Growth Across Africa — Built on Engineering Excellence
                     </p>
                   </div>
                 </div>
@@ -442,9 +415,9 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          SERVICES SECTION
+          SERVICES
       ══════════════════════════════════════════ */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gradient-to-b from-[#F8F4F0] to-white">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn className="text-center mb-16">
             <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">
@@ -454,33 +427,53 @@ export default function Home() {
               Our Core Services
             </h2>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mx-auto mt-6" />
+            <p className="font-body text-[#0D2137]/60 max-w-2xl mx-auto mt-4">
+              Comprehensive electrical engineering solutions tailored to your specific needs
+            </p>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-8">
             {services.map(({ icon, title, desc, items }, i) => (
               <FadeIn key={title} delay={i * 120}>
-                <div className="group border border-[#0D2137]/10 p-8 hover:border-[#8B1A1A] transition-all duration-500 hover:shadow-xl hover:shadow-[#8B1A1A]/10 relative overflow-hidden bg-[#F8F4F0]">
-                  <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
-                  <div className="mb-6 transform group-hover:-translate-y-1 transition-transform duration-500">
-                    {icon}
+                <div className="group relative bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-[#8B1A1A] to-[#F59E0B] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                    style={{
+                      padding: "2px",
+                      mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMaskComposite: "xor",
+                      maskComposite: "exclude",
+                    }}
+                  />
+                  <div className="relative z-10">
+                    <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                      {icon}
+                    </div>
+                    <h3 className="font-heading text-xl font-bold text-[#0D2137] mb-4 leading-snug">
+                      {title}
+                    </h3>
+                    <p className="font-body text-[#0D2137]/70 text-sm leading-relaxed mb-6">
+                      {desc}
+                    </p>
+                    <ul className="space-y-2">
+                      {items.map((item) => (
+                        <li key={item} className="flex items-center gap-2 font-sans text-xs text-[#0D2137]/80 group-hover:text-[#0D2137] transition-colors">
+                          <span className="w-4 h-[1px] bg-[#8B1A1A] group-hover:w-6 transition-all duration-300" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      to="/services"
+                      className="inline-flex items-center gap-2 mt-6 text-xs font-sans text-[#8B1A1A] opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    >
+                      Learn More
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-[#0D2137] mb-4 leading-snug">
-                    {title}
-                  </h3>
-                  <p className="font-body text-[#0D2137] text-sm leading-relaxed mb-6">
-                    {desc}
-                  </p>
-                  <ul className="space-y-2">
-                    {items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-center gap-2 font-sans text-xs text-[#0D2137]"
-                      >
-                        <span className="w-4 h-[1px] bg-[#8B1A1A]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </FadeIn>
             ))}
@@ -489,7 +482,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          PROJECTS SECTION
+          PROJECTS — EV card gets real photo
       ══════════════════════════════════════════ */}
       <section className="py-24 bg-[#0D2137] relative overflow-hidden">
         <div
@@ -500,8 +493,10 @@ export default function Home() {
             backgroundSize: "60px 60px",
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#8B1A1A]/5 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <FadeIn className="mb-16">
+          <FadeIn className="mb-12">
             <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#F59E0B] mb-4 block">
               Track Record
             </span>
@@ -510,63 +505,71 @@ export default function Home() {
             </h2>
             <div className="w-16 h-[3px] bg-[#8B1A1A] mt-6" />
           </FadeIn>
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map(({ num, title, location, desc, tag }, i) => (
-              <FadeIn key={title} delay={i * 100}>
-                <div className="group border border-white/10 p-8 hover:border-[#8B1A1A]/60 transition-all duration-500 bg-white/5">
-                  <div className="flex items-start justify-between mb-6">
-                    <span className="font-heading text-5xl font-bold text-white/10">
-                      {num}
-                    </span>
-                    <span className="font-sans font-bold text-xs text-[#F59E0B] border border-[#F59E0B]/30 px-3 py-1">
-                      {tag}
-                    </span>
-                  </div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-1">
-                    {title}
-                  </h3>
-                  <p className="font-sans text-xs text-[#8B1A1A] mb-4 uppercase">
-                    {location}
-                  </p>
-                  <p className="font-body text-white text-sm leading-relaxed">
-                    {desc}
-                  </p>
-                </div>
-              </FadeIn>
+
+          {/* Filter Tabs */}
+          <div className="flex flex-wrap gap-3 mb-12">
+            {["All", "Energy", "Data Center", "Infrastructure", "Solar"].map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-6 py-2 text-sm font-sans tracking-wide uppercase transition-all duration-300 ${
+                  activeFilter === filter
+                    ? "bg-[#8B1A1A] text-white shadow-lg"
+                    : "border border-white/20 text-white/70 hover:border-[#8B1A1A] hover:text-white"
+                }`}
+              >
+                {filter}
+              </button>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ══════════════════════════════════════════
-          WHY CHOOSE US & CTA
-      ══════════════════════════════════════════ */}
-      <section className="py-24 bg-[#F8F4F0]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyUs.map(({ title, desc }, i) => (
-              <FadeIn key={title} delay={i * 80}>
-                <div className="flex gap-5 group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white border border-[#8B1A1A]/20 rounded-xl flex items-center justify-center group-hover:bg-[#8B1A1A] transition-all">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      className="w-6 h-6 text-[#8B1A1A] group-hover:text-white"
-                    >
-                      <path
-                        d="M5 13l4 4L19 7"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+          <div className="grid md:grid-cols-2 gap-6">
+            {filteredProjects.map(({ num, title, location, desc, tag, image }, i) => (
+              <FadeIn key={title} delay={i * 100}>
+                <div className="group relative border border-white/10 hover:border-[#8B1A1A]/60 transition-all duration-500 bg-white/5 backdrop-blur-sm hover:bg-white/10 overflow-hidden">
+
+                  {/* ── Real photo for EV card, gradient placeholder for others ── */}
+                  {image ? (
+                    <div className="relative overflow-hidden h-52">
+                      <img
+                        src={image}
+                        alt={title}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                        style={{ filter: "brightness(0.8)" }}
                       />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-lg font-bold text-[#0D2137] mb-2">
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0D2137]/90 via-[#0D2137]/20 to-transparent" />
+                      {/* Tag on image */}
+                      <span className="absolute top-4 right-4 font-sans font-bold text-xs text-[#F59E0B] border border-[#F59E0B]/40 px-3 py-1 bg-[#0D2137]/70 backdrop-blur-sm">
+                        {tag}
+                      </span>
+                      {/* Number watermark */}
+                      <span className="absolute top-2 left-4 font-heading text-6xl font-bold text-white/10">
+                        {num}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="relative h-2 bg-gradient-to-r from-[#8B1A1A]/40 to-transparent" />
+                  )}
+
+                  <div className="p-8">
+                    {!image && (
+                      <div className="flex items-start justify-between mb-6">
+                        <span className="font-heading text-5xl font-bold text-white/10 group-hover:text-white/20 transition-all duration-500">
+                          {num}
+                        </span>
+                        <span className="font-sans font-bold text-xs text-[#F59E0B] border border-[#F59E0B]/30 px-3 py-1 group-hover:bg-[#F59E0B]/10 transition-all">
+                          {tag}
+                        </span>
+                      </div>
+                    )}
+                    <h3 className="font-heading text-xl font-bold text-white mb-1 group-hover:text-[#F59E0B] transition-colors">
                       {title}
                     </h3>
-                    <p className="font-body text-[#0D2137] text-sm leading-relaxed">
+                    <p className="font-sans text-xs text-[#8B1A1A] mb-4 uppercase tracking-wide">
+                      {location}
+                    </p>
+                    <p className="font-body text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors">
                       {desc}
                     </p>
                   </div>
@@ -577,22 +580,83 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative bg-[#8B1A1A] py-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-white">
-          <FadeIn className="max-w-2xl">
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">
-              Let's Start Your Next Project Together
+      {/* ══════════════════════════════════════════
+          WHY CHOOSE US
+      ══════════════════════════════════════════ */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeIn className="text-center mb-16">
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A] mb-4 block">
+              Why Choose Us
+            </span>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#0D2137]">
+              The ELDEC Advantage
             </h2>
-            <p className="font-body text-lg mb-10 opacity-80">
-              From design to commissioning — ELDEC delivers engineering
-              solutions built to last.
+            <div className="w-16 h-[3px] bg-[#8B1A1A] mx-auto mt-6" />
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyUs.map(({ icon, title, desc }, i) => (
+              <FadeIn key={title} delay={i * 80}>
+                <div className="group flex gap-5 p-6 rounded-2xl hover:bg-[#F8F4F0] transition-all duration-500 hover:shadow-xl">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-[#8B1A1A] to-[#a61f1f] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <span className="text-2xl">{icon}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-lg font-bold text-[#0D2137] mb-2 group-hover:text-[#8B1A1A] transition-colors">
+                      {title}
+                    </h3>
+                    <p className="font-body text-[#0D2137]/70 text-sm leading-relaxed">
+                      {desc}
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          CTA
+      ══════════════════════════════════════════ */}
+      <section className="relative bg-[#8B1A1A] py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{ backgroundImage: "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)" }}
+          />
+          <div
+            className="absolute inset-0 animate-pulse"
+            style={{ backgroundImage: "repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 8px)" }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <FadeIn className="text-center max-w-3xl mx-auto">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-6">
+              Ready to Power Your Next Project?
+            </h2>
+            <p className="font-body text-lg mb-10 text-white/80 leading-relaxed">
+              From initial design to final commissioning — ELDEC delivers engineering
+              solutions built to international standards, every time.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
-                className="bg-white text-[#8B1A1A] px-10 py-4 uppercase text-sm tracking-widest font-sans"
+                className="group relative bg-white text-[#8B1A1A] px-10 py-4 uppercase text-sm tracking-widest font-sans font-bold overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                Get in Touch
+                <span className="relative z-10">Start a Project</span>
+                <span className="absolute inset-0 bg-[#8B1A1A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <span className="absolute inset-0 flex items-center justify-center text-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                  Start a Project →
+                </span>
+              </Link>
+              <Link
+                to="/services"
+                className="border-2 border-white/40 text-white px-10 py-4 uppercase text-sm tracking-widest font-sans font-bold hover:border-white hover:bg-white/10 transition-all duration-300"
+              >
+                Explore Services
               </Link>
             </div>
           </FadeIn>
@@ -600,8 +664,21 @@ export default function Home() {
       </section>
 
       <style>{`
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0; }
+          50%       { transform: translateY(-20px) translateX(10px); opacity: 0.5; }
+        }
+        .animate-float {
+          animation: float linear infinite;
+        }
       `}</style>
     </main>
   );

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import imgHeroBg from "../assets/logo/about.jpg";
 
 /* ── in-view hook ── */
 function useInView(threshold = 0.15) {
@@ -103,45 +104,119 @@ export default function About() {
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
 
-      {/* ══ HERO — Off-White background with navy text ══ */}
-      <section className="relative bg-[#F8F4F0] pt-40 pb-32 overflow-hidden">
+      {/* ══ HERO — Aligned with Home Page & Services Page Hero Styling ══ */}
+      <section
+        className="relative overflow-hidden"
+        style={{ minHeight: "95vh" }}
+      >
+        {/* Background image */}
         <div
-          className="absolute top-0 right-0 h-full w-1/2 bg-[#8B1A1A] opacity-5"
-          style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 60% 100%)" }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-[8000ms] hover:scale-105"
           style={{
-            backgroundImage:
-              "linear-gradient(#0D2137 1px,transparent 1px),linear-gradient(90deg,#0D2137 1px,transparent 1px)",
-            backgroundSize: "70px 70px",
+            backgroundImage: `url(${imgHeroBg})`,
+            backgroundPosition: "center 30%",
+            filter: "brightness(0.4) grayscale(10%)",
           }}
         />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+        {/* Gradient overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(105deg, rgba(13,33,55,0.98) 0%, rgba(13,33,55,0.85) 40%, rgba(139,26,26,0.3) 100%)",
+          }}
+        />
+
+        {/* Subtle grid texture */}
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* Crimson left-edge accent bar */}
+        <div className="absolute top-0 left-0 h-full w-[4px] bg-[#8B1A1A] z-20" />
+
+        {/* Main Hero Content */}
+        <div
+          className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col justify-center"
+          style={{
+            minHeight: "95vh",
+            paddingTop: "160px",
+            paddingBottom: "80px",
+          }}
+        >
+          {/* Eyebrow */}
           <div
-            className="flex items-center gap-3 mb-6"
+            className="flex items-center gap-4 mb-8"
             style={{ animation: "fadeDown 0.7s ease both" }}
           >
-            <span className="w-8 h-[2px] bg-[#8B1A1A]" />
-            <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#8B1A1A]">
+            <span className="w-10 h-[2px] bg-[#8B1A1A]" />
+            <span
+              className="font-sans text-[12px] md:text-[14px] tracking-[0.3em] uppercase text-[#F59E0B] font-bold"
+              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
+            >
               Our Story
             </span>
           </div>
+
+          {/* Main Heading */}
           <h1
-            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0D2137] leading-tight mb-6"
-            style={{ animation: "fadeUp 0.8s ease 0.1s both" }}
+            className="font-heading font-bold text-white leading-[0.95] mb-8"
+            style={{
+              fontSize: "clamp(48px, 9vw, 110px)",
+              animation: "fadeUp 0.8s ease 0.1s both",
+              textShadow: "0 10px 30px rgba(0,0,0,0.3)",
+            }}
           >
-            About <span className="text-[#8B1A1A]">ELDEC</span>
-            <br />
-            <span className="text-[#0D2137]/25">Limited</span>
+            About <br />
+            <span className="text-[#8B1A1A]">ELDEC</span> <br />
+            <span className="text-white/90">Limited</span>
           </h1>
+
+          {/* Styled Paragraph */}
           <p
-            className="font-body text-[#0D2137] text-lg max-w-xl leading-relaxed"
-            style={{ animation: "fadeUp 0.8s ease 0.25s both" }}
+            className="font-sans text-white/90 text-lg md:text-xl max-w-2xl mb-12"
+            style={{
+              animation: "fadeUp 0.8s ease 0.25s both",
+              lineHeight: "1.6",
+              fontWeight: "400",
+              letterSpacing: "0.015em",
+              borderLeft: "2px solid rgba(139, 26, 26, 0.5)",
+              paddingLeft: "20px",
+            }}
           >
-            A professional electrical engineering firm committed to delivering
+            <span className="font-bold text-white">ELDEC Limited</span>  A professional 
+            electrical engineering firm committed to delivering
             safe, reliable and internationally compliant solutions across Africa.
+            <span className="text-[#F59E0B] font-medium">
+              {" "}
+              built to international standards, every time.
+            </span>
           </p>
+
+          {/* Buttons */}
+          <div
+            className="flex flex-wrap gap-5"
+            style={{ animation: "fadeUp 0.8s ease 0.4s both" }}
+          >
+            <Link
+              to="/contact"
+              className="font-sans text-[12px] tracking-widest uppercase bg-[#8B1A1A] text-white px-10 py-5 hover:bg-[#a61f1f] transition-all duration-300 active:scale-95 shadow-lg font-bold"
+            >
+              Start a Project
+            </Link>
+            <Link
+              to="/services"
+              className="font-sans text-[12px] tracking-widest uppercase border border-white/60 text-white px-10 py-5 transition-all duration-300 hover:border-[#F59E0B] hover:text-[#F59E0B] backdrop-blur-sm font-bold"
+            >
+              Our Services
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -157,7 +232,6 @@ export default function About() {
                 <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#0D2137] mb-8 leading-tight">
                   Engineering Solutions Built<br />to International Standards
                 </h2>
-                {/* Text box is Off-White, popping against White section */}
                 <div className="font-body text-[#0D2137] leading-relaxed text-justify space-y-5 border border-[#0D2137]/10 p-8 bg-[#F8F4F0]">
                   <p>
                     <span className="float-left font-heading text-7xl font-bold text-[#8B1A1A] leading-none mr-3 mt-1"
@@ -196,7 +270,6 @@ export default function About() {
                   <div className="space-y-5">
                     {expertise.map(({ years, area }) => (
                       <div key={area} className="flex items-center gap-5">
-                        {/* Changed color from #8B1A1A to #F59E0B to match home page stats */}
                         <span className="font-heading text-3xl font-bold text-[#F59E0B] min-w-[56px]">{years}</span>
                         <span className="font-body text-white text-sm leading-snug border-l border-white/10 pl-5">{area}</span>
                       </div>
@@ -206,7 +279,6 @@ export default function About() {
               </FadeIn>
 
               <FadeIn delay={220}>
-                {/* Sectors box changed to Off-White to contrast with White section */}
                 <div className="border border-[#0D2137]/10 bg-[#F8F4F0] p-8">
                   <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#8B1A1A] mb-5">Sectors We Serve</h3>
                   <div className="flex flex-wrap gap-2">
@@ -234,7 +306,7 @@ export default function About() {
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Mission — White Card on Off-White background */}
+            {/* Mission Card */}
             <FadeIn delay={80}>
               <div className="relative bg-white border border-[#0D2137]/10 p-10 h-full overflow-hidden group hover:border-[#8B1A1A] transition-all duration-500">
                 <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
@@ -257,7 +329,7 @@ export default function About() {
               </div>
             </FadeIn>
 
-            {/* Vision — Navy Card */}
+            {/* Vision Card */}
             <FadeIn delay={180}>
               <div className="relative bg-[#0D2137] border border-white/10 p-10 h-full overflow-hidden group hover:border-[#8B1A1A]/50 transition-all duration-500">
                 <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
@@ -298,7 +370,6 @@ export default function About() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map(({ icon, title, desc }, i) => (
               <FadeIn key={title} delay={i * 100}>
-                {/* Off-White Cards on White background */}
                 <div className="group text-center p-8 border border-[#0D2137]/10 hover:border-[#8B1A1A] hover:shadow-xl hover:shadow-[#8B1A1A]/10 transition-all duration-500 relative overflow-hidden bg-[#F8F4F0]">
                   <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#8B1A1A] group-hover:w-full transition-all duration-500" />
                   <div className="w-14 h-14 bg-white group-hover:bg-[#8B1A1A] flex items-center justify-center mx-auto mb-5 transition-colors duration-500">
@@ -360,7 +431,7 @@ export default function About() {
                 ].map(({ label, detail }) => (
                   <div key={label} className="border border-white/10 p-5 hover:border-[#8B1A1A]/50 transition-colors duration-300 bg-white/5">
                     <div className="w-2 h-2 bg-[#8B1A1A] mb-3" />
-                    <p className="font-sans text-xs  tracking-wide uppercase text-white/80 mb-1">{label}</p>
+                    <p className="font-sans text-xs tracking-wide uppercase text-white/80 mb-1">{label}</p>
                     <p className="font-body text-white/40 text-xs">{detail}</p>
                   </div>
                 ))}
@@ -386,7 +457,6 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {standards.map(({ code, name, priority }, i) => (
               <FadeIn key={code} delay={i * 60}>
-                {/* White Cards on Off-White background */}
                 <div className={`flex items-center gap-5 p-5 border transition-all duration-300 hover:shadow-lg group ${
                   priority ? "border-[#8B1A1A] bg-white" : "border-[#0D2137]/10 bg-white hover:border-[#8B1A1A]/40"
                 }`}>
