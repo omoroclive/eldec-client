@@ -1,0 +1,28 @@
+﻿================================================
+SUSPICIOUS FILE SCAN REPORT
+Generated on: 05/19/2026 17:53:11
+Scanned Directory: C:\Users\USER\OneDrive\Desktop\eldec\client
+================================================
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\acorn.ps1 | Size: 0.77 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\autoprefixer.ps1 | Size: 0.82 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\baseline-browser-mapping.ps1 | Size: 0.85 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\browserslist.ps1 | Size: 0.78 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\cssesc.ps1 | Size: 0.77 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\eslint.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\jiti.ps1 | Size: 0.77 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\js-yaml.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\jsesc.ps1 | Size: 0.77 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\json5.ps1 | Size: 0.77 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\loose-envify.ps1 | Size: 0.78 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\nanoid.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\node-which.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\parser.ps1 | Size: 0.84 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\resolve.ps1 | Size: 0.78 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\rolldown.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\semver.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\sucrase-node.ps1 | Size: 0.8 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\sucrase.ps1 | Size: 0.78 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\tailwind.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\tailwindcss.ps1 | Size: 0.79 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\update-browserslist-db.ps1 | Size: 0.82 KB
+[WARNING] Extension: .ps1 | Path: C:\Users\USER\OneDrive\Desktop\eldec\client\node_modules\.bin\vite.ps1 | Size: 0.77 KB

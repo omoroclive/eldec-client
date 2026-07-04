@@ -1,19 +1,22 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import About from './pages/About'
-import Services from './pages/Services'
-import Contact from './pages/Contact'
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import LowVoltageConsultancy from "./pages/LowVoltageConsultancy";
+import EldecSolarMiniGrids from "./pages/EldecSolarMiniGrids";
+import BESSPage from "./pages/BESSPage";
 
 /* Scrolls to top on every page navigation */
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [pathname])
-  return null
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+  return null;
 }
 
 export default function App() {
@@ -22,16 +25,27 @@ export default function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path="/"         element={<Home />} />
-        <Route path="/about"    element={<About />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/contact"  element={<Contact />} />
+        <Route
+          path="/lowvoltageconsultancy"
+          element={<LowVoltageConsultancy />}
+
+        />
+        <Route
+          path="/eldecsolarminigrids"
+          element={<EldecSolarMiniGrids />}
+
+        />
+        <Route path="/BESSPage" element={<BESSPage />} />
+        <Route path="/contact" element={<Contact />} />
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
 /* Simple 404 page */
@@ -56,5 +70,5 @@ function NotFound() {
         </a>
       </div>
     </main>
-  )
+  );
 }
