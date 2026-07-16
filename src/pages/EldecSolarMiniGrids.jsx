@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 
 export default function SolarMiniGrids() {
   const rootRef = useRef(null);
@@ -72,7 +73,13 @@ export default function SolarMiniGrids() {
   }, []);
 
   return (
-    <div ref={rootRef} className="mg-page">
+    <>
+      <SEO
+        title="Solar Mini Grid Design | ELDEC Limited"
+        description="ELDEC designs standalone and hybrid solar mini-grids for rural electrification in Kenya, sized to IEC 62257 with battery storage, EMS control, and full KOSAP/EPRA compliance."
+        path="/services/solar-mini-grids"
+      />
+      <div ref={rootRef} className="mg-page">
       <style>{`
         .mg-page {
           --sand:#FBF6EC; --cream:#FFFFFF; --paper:#FFFDF6;
@@ -570,6 +577,7 @@ export default function SolarMiniGrids() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

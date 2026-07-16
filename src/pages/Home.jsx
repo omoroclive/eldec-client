@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 // ── Import project images ──
 import imgPanel from "../assets/logo/image3.jpeg";
@@ -12,80 +13,6 @@ import imgLines from "../assets/logo/image4.jpeg";
 import imgFuelStation from "../assets/logo/fuelstation.jpg";
 import imgHybrid from "../assets/logo/hybridsystem.jpg";
 import imgSolarInstallation from "../assets/logo/solar2.jpg";
-
-/* ── JSON-LD structured data ── */
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://eldecengineering.com/#organization",
-  name: "ELDEC Limited",
-  alternateName: "ELDEC Engineering",
-  description:
-    "Professional electrical engineering consultancy, design, installation and project supervision across Africa — built to international standards.",
-  url: "https://eldecengineering.com",
-  logo: "https://eldecengineering.com/logo.png",
-  image: "https://eldecengineering.com/og-image.jpg",
-  telephone: "+254 721 387 121", // ← replace with real number
-  email: "designs@eldecengineering.com", // ← replace with real email
-  foundingDate: "2025",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Nairobi",
-    addressCountry: "KE",
-  },
-  areaServed: [
-    { "@type": "Country", name: "Kenya" },
-    { "@type": "Country", name: "Rwanda" },
-    { "@type": "Continent", name: "Africa" },
-  ],
-  sameAs: [
-    // Add LinkedIn, Facebook etc. when live
-    // "https://www.linkedin.com/company/eldec-limited"
-  ],
-  knowsAbout: [
-    "Electrical Design",
-    "MV LV Power Systems",
-    "EV Charging Infrastructure",
-    "Solar PV Systems",
-    "Data Center Electrical",
-    "Hazardous Area Installations",
-    "BS 7671",
-    "IEC 60364",
-  ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Electrical Engineering Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Electrical Design & Consultancy",
-          description:
-            "Load assessments, power distribution design, LV & MV systems, transformer and switchgear design, earthing, lightning protection and lighting layouts.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Installation & Supervision",
-          description:
-            "End-to-end installation supervision, site inspection, testing, commissioning and certification.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Specialized Engineering",
-          description:
-            "Data centers, EV charging stations, military & security facilities, fuel and hazardous area installations, off-grid power systems.",
-        },
-      },
-    ],
-  },
-};
 
 /* ── tiny hook: triggers when element enters viewport ── */
 function useInView(threshold = 0.15) {
@@ -257,69 +184,26 @@ export default function Home() {
 
   return (
     <>
-      {/* ══════════════════════════════════════════
-          SEO — react-helmet-async
-      ══════════════════════════════════════════ */}
+      {/* ── Shared SEO: title, description, canonical, Open Graph, Twitter ── */}
+      <SEO
+        title="ELDEC Limited | Electrical Engineering & ELV Design Consultancy, Nairobi"
+        description="ELDEC Limited delivers electrical design, ELV, solar, and EV charging engineering across Kenya, Africa, and the Middle East — built to international standards."
+        path="/"
+      />
+
+      {/* ── Extra tags specific to this page, not covered by the shared component ──
+          Note: the LocalBusiness/ProfessionalService JSON-LD block that used to live
+          here has been removed — it's now rendered once, site-wide, by
+          <LocalBusinessSchema /> in App.jsx. Keeping it in both places would give
+          search engines two competing structured-data blocks for the same business. */}
       <Helmet>
-        {/* ── Primary ── */}
-        <title>ELDEC Limited | Electrical Engineering Consultancy in Kenya & Africa</title>
-        <meta
-          name="description"
-          content="ELDEC Limited delivers professional electrical engineering consultancy, design, installation and project supervision across Africa. Specialists in LV/MV systems, EV charging, solar PV, data centres and hazardous area installations. Built to BS 7671 & IEC 60364."
-        />
         <meta
           name="keywords"
           content="electrical engineering Kenya, electrical consultancy Nairobi, LV MV design Africa, EV charging installation Kenya, solar PV off-grid, data center electrical design, hazardous area installation, BS 7671 IEC 60364, ELDEC Limited"
         />
-        <meta name="author" content="ELDEC Limited" />
-        <link rel="canonical" href="https://eldecengineering.com/" />
-
-        {/* ── Open Graph (Facebook, LinkedIn, WhatsApp previews) ── */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://eldecengineering.com/" />
-        <meta
-          property="og:title"
-          content="ELDEC Limited | Electrical Engineering Consultancy — Kenya & Africa"
-        />
-        <meta
-          property="og:description"
-          content="Professional electrical engineering consultancy, design and project supervision across Africa. EV charging, solar PV, data centres, LV/MV systems — built to international standards."
-        />
-        {/* Replace with your real OG image (1200×630px recommended) */}
-        <meta property="og:image" content="https://eldecengineering.com/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="ELDEC Limited — Electrical Engineering across Africa" />
-        <meta property="og:site_name" content="ELDEC Limited" />
-        <meta property="og:locale" content="en_KE" />
-
-        {/* ── Twitter / X Card ── */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://eldecengineering.com/" />
-        <meta
-          name="twitter:title"
-          content="ELDEC Limited | Electrical Engineering — Kenya & Africa"
-        />
-        <meta
-          name="twitter:description"
-          content="Professional electrical engineering consultancy, design and project supervision across Africa. EV charging, solar, data centres & more."
-        />
-        <meta name="twitter:image" content="https://eldecengineering.com/og-image.jpg" />
-        <meta name="twitter:image:alt" content="ELDEC Limited — Electrical Engineering across Africa" />
-        {/* Add your handle if you have one: */}
-        {/* <meta name="twitter:site" content="@ELDECEngineering" /> */}
-
-        {/* ── Robots & indexing ── */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-
-        {/* ── Geo / regional targeting ── */}
         <meta name="geo.region" content="KE-30" />
         <meta name="geo.placename" content="Nairobi, Kenya" />
-
-        {/* ── JSON-LD Structured Data ── */}
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
       </Helmet>
 
       <main className="bg-[#F8F4F0] overflow-x-hidden">

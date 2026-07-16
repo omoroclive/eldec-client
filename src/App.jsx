@@ -1,7 +1,9 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SEO from "./components/SEO";
+import LocalBusinessSchema from "./components/LocalBusinessSchema";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -23,23 +25,39 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      {/* Structured data — present on every route, only needs to be rendered once */}
+      <LocalBusinessSchema />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+
+        {/* ── New, SEO-friendly URLs ── */}
         <Route
-          path="/lowvoltageconsultancy"
+          path="/services/low-voltage-consultancy"
           element={<LowVoltageConsultancy />}
-
         />
         <Route
-          path="/eldecsolarminigrids"
+          path="/services/solar-mini-grids"
           element={<EldecSolarMiniGrids />}
-
         />
-        <Route path="/BESSPage" element={<BESSPage />} />
+        <Route
+          path="/services/battery-energy-storage"
+          element={<BESSPage />}
+        />
+
         <Route path="/contact" element={<Contact />} />
+
+        {/* ── 301-style redirects from the old URLs ──
+            These keep old links/bookmarks/search-indexed pages working
+            and forward users (and eventually search engines) to the new
+            path instead of hitting a 404. Remove these ~6-12 months after
+            the new URLs are indexed and old ones have dropped out of Google. */}
+        <Route path="/lowvoltageconsultancy" element={<Navigate to="/services/low-voltage-consultancy" replace />} />
+        <Route path="/eldecsolarminigrids" element={<Navigate to="/services/solar-mini-grids" replace />} />
+        <Route path="/BESSPage" element={<Navigate to="/services/battery-energy-storage" replace />} />
+
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -52,6 +70,12 @@ export default function App() {
 function NotFound() {
   return (
     <main className="min-h-screen bg-[#0D2137] flex items-center justify-center px-6">
+      <SEO
+        title="Page Not Found | ELDEC Limited"
+        description="The page you're looking for doesn't exist."
+        path="/404"
+        noindex
+      />
       <div className="text-center">
         <p className="font-sans text-xs tracking-[0.3em] uppercase text-[#F59E0B] mb-4">
           404 — Page Not Found

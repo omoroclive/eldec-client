@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import imgHeroBg from "../assets/logo/contact.jpg";
+import SEO from "../components/SEO";
 
 /* ── in-view hook ── */
 function useInView(threshold = 0.12) {
@@ -106,6 +107,26 @@ const initialForm = {
   message: "",
 };
 
+/* ── Find Us: office directions ── */
+const MAP_QUERY = "Timschack House, Ngong Road, Dagoretti, Nairobi";
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(MAP_QUERY)}`;
+const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`;
+
+const routeSteps = [
+  {
+    label: "From Dagoretti Corner",
+    text: "Head towards the city on Ngong Road. Timschack House sits a short distance past the corner — watch for the building signage set back from the road.",
+  },
+  {
+    label: "From the CBD",
+    text: "Take Ngong Road out towards Dagoretti Corner / Karen. Timschack House is before you reach the Dagoretti Corner junction.",
+  },
+  {
+    label: "On arrival",
+    text: "Enter the compound and take the lift or stairs to the 5th Floor. ELDEC's office is Room 5A.",
+  },
+];
+
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
@@ -168,6 +189,11 @@ export default function Contact() {
 
   return (
     <main className="bg-[#F8F4F0] overflow-x-hidden">
+      <SEO
+        title="Contact ELDEC Limited | Nairobi Electrical Engineering Consultancy"
+        description="Get in touch with ELDEC Limited for electrical design, EV charging, solar, and ELV consultancy. Visit us at Timschack House, Ngong Road, Dagoretti, Nairobi."
+        path="/contact"
+      />
 
       {/* ══ HERO — Aligned with Home, Services & About Pages ══ */}
       <section
@@ -595,6 +621,91 @@ export default function Contact() {
                       IEC 60364, KS 662 and other applicable international standards.
                     </p>
                   </div>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ FIND US — Map & Directions ══ */}
+      <section className="py-24 bg-[#0D2137]">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeIn>
+            <div className="flex items-center gap-4 mb-4">
+              <span className="w-10 h-[2px] bg-[#8B1A1A]" />
+              <span className="font-sans text-[12px] md:text-[14px] tracking-[0.3em] uppercase text-[#F59E0B] font-bold">
+                Find Us
+              </span>
+            </div>
+            <h2 className="font-heading font-bold text-white leading-[0.95] mb-16" style={{ fontSize: "clamp(36px, 5vw, 56px)" }}>
+              Visit Our Office
+            </h2>
+          </FadeIn>
+
+          <div className="grid lg:grid-cols-12 gap-16">
+            {/* ── Address + directions — 5 cols ── */}
+            <div className="lg:col-span-5">
+              <FadeIn delay={80}>
+                <div className="bg-[#F8F4F0] border-l-4 border-[#8B1A1A] p-8">
+                  <p className="font-sans text-xs tracking-widest uppercase text-[#8B1A1A] mb-3">
+                    Office Address
+                  </p>
+                  <p className="font-body text-[#0D2137] text-lg leading-relaxed">
+                    5th Floor, Room 5A, Timschack House
+                    <br />
+                    Ngong Road, Dagoretti
+                    <br />
+                    Nairobi, Kenya
+                  </p>
+                  <a
+                    href={directionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 font-sans text-xs tracking-widest uppercase bg-[#0D2137] text-white px-6 py-3.5 hover:bg-[#8B1A1A] transition-all duration-300 font-bold"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Get Directions
+                  </a>
+                </div>
+              </FadeIn>
+
+              <div className="mt-10 space-y-6">
+                {routeSteps.map((step, i) => (
+                  <FadeIn key={step.label} delay={140 + i * 60}>
+                    <div className={`flex gap-4 pb-6 ${i < routeSteps.length - 1 ? "border-b border-white/10" : ""}`}>
+                      <span className="font-sans text-xs text-[#F59E0B] pt-0.5 flex-shrink-0 w-6">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <p className="font-sans text-sm font-bold text-white mb-1.5">
+                          {step.label}
+                        </p>
+                        <p className="font-body text-white/70 text-sm leading-relaxed">
+                          {step.text}
+                        </p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Map — 7 cols ── */}
+            <div className="lg:col-span-7">
+              <FadeIn delay={120}>
+                <div className="relative border border-white/15 shadow-xl" style={{ minHeight: 480 }}>
+                  <iframe
+                    title="ELDEC office location — Timschack House, Ngong Road, Dagoretti"
+                    src={mapEmbedSrc}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, position: "absolute", inset: 0, filter: "grayscale(0.25) contrast(1.05)" }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </FadeIn>
             </div>

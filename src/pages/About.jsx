@@ -1,5 +1,8 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 import imgHeroBg from "../assets/logo/about.jpg";
 
 /* ── in-view hook ── */
@@ -102,7 +105,26 @@ const values = [
 
 export default function About() {
   return (
-    <main className="bg-[#F8F4F0] overflow-x-hidden">
+    <>
+      {/* ── Shared SEO: title, description, canonical, Open Graph, Twitter ── */}
+      <SEO
+        title="About ELDEC Limited | Electrical Engineering Consultancy, Nairobi"
+        description="ELDEC Limited is a Kenya-based electrical engineering firm delivering safe, reliable, standards-compliant LV/MV design, ELV, solar, and EV charging solutions across Africa."
+        path="/about"
+      />
+
+      {/* ── Extra tags specific to this page, not covered by the shared component ── */}
+      <Helmet>
+        <meta
+          name="keywords"
+          content="about ELDEC Limited, electrical engineering firm Kenya, electrical consultancy Nairobi, LV MV design Africa, electrical engineering company profile, BS 7671 IEC 60364, professional electrical engineer Kenya"
+        />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="KE-30" />
+        <meta name="geo.placename" content="Nairobi, Kenya" />
+      </Helmet>
+
+      <main className="bg-[#F8F4F0] overflow-x-hidden">
 
       {/* ══ HERO — Aligned with Home Page & Services Page Hero Styling ══ */}
       <section
@@ -518,6 +540,7 @@ export default function About() {
           to   { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-    </main>
+      </main>
+    </>
   );
 }

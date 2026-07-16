@@ -1,5 +1,7 @@
 // LowVoltageConsultancy.jsx — No navbar, no footer
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 
 /* ==================================================================== */
 /* Scoped styles — inline, only applied while this component is mounted  */
@@ -978,7 +980,26 @@ const LowVoltageConsultancy = () => {
   useScopedScrollPadding('74px');
 
   return (
-    <div className="lvc-page">
+    <>
+      {/* ── Shared SEO: title, description, canonical, Open Graph, Twitter ── */}
+      <SEO
+        title="Low Voltage Consultancy | Electrical Design & Compliance | ELDEC Limited"
+        description="ELDEC's low voltage consultancy: single-line diagrams, fault-level and cable-sizing calculations, safety reviews (EICR, loop impedance, surge protection) and full IEC/BS 7671/KS 662 compliance documentation."
+        path="/services/low-voltage-consultancy"
+      />
+
+      {/* ── Extra tags specific to this page, not covered by the shared component ── */}
+      <Helmet>
+        <meta
+          name="keywords"
+          content="low voltage consultancy Kenya, LV electrical design, single line diagrams, cable sizing calculations, fault level analysis, EICR Kenya, BS 7671 IEC 60364, protection coordination, earthing design"
+        />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="KE-30" />
+        <meta name="geo.placename" content="Nairobi, Kenya" />
+      </Helmet>
+
+      <div className="lvc-page">
       <style>{STYLES}</style>
 
       {/* No navbar */}
@@ -1022,7 +1043,8 @@ const LowVoltageConsultancy = () => {
       <SectorsAct />
 
       {/* No footer */}
-    </div>
+      </div>
+    </>
   );
 };
 

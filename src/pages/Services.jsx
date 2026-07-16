@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 // ── Image Imports ──
 import imgHeroBg      from "../assets/logo/powerstation3.jpg";
@@ -267,7 +269,26 @@ export default function Services() {
   const serviceImages = [imgStation, imgDataCenter, imgFuelStation];
 
   return (
-    <main className="bg-[#F8F4F0] overflow-x-hidden">
+    <>
+      {/* ── Shared SEO: title, description, canonical, Open Graph, Twitter ── */}
+      <SEO
+        title="Our Services | ELDEC Limited"
+        description="Electrical design and consultancy, installation supervision, EV charging, solar and backup power, data center electrical design, and technical training."
+        path="/services"
+      />
+
+      {/* ── Extra tags specific to this page, not covered by the shared component ── */}
+      <Helmet>
+        <meta
+          name="keywords"
+          content="electrical engineering services Kenya, electrical design consultancy, LV MV installation supervision, low voltage consultancy, solar mini grids, battery energy storage, EV charging design, data center electrical design, BS 7671 IEC 60364"
+        />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="KE-30" />
+        <meta name="geo.placename" content="Nairobi, Kenya" />
+      </Helmet>
+
+      <main className="bg-[#F8F4F0] overflow-x-hidden">
 
       {/* ══ HERO ══ */}
       <section className="relative overflow-hidden" style={{ minHeight: "88vh" }}>
@@ -441,6 +462,7 @@ export default function Services() {
         @keyframes fadeUp   { from { opacity: 0; transform: translateY(30px);  } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
-    </main>
+      </main>
+    </>
   );
 }

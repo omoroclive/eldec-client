@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 
 export default function BESS() {
   const rootRef = useRef(null);
@@ -264,7 +265,13 @@ export default function BESS() {
   }, []);
 
   return (
-    <div ref={rootRef} className="bess-page">
+    <>
+      <SEO
+        title="Battery Energy Storage Systems (BESS) Design | ELDEC Limited"
+        description="ELDEC designs grid-connected and hybrid battery energy storage systems, sized to the application and engineered to IEC 62933, IEC 62619, and NFPA 855 for safety and grid-code compliance."
+        path="/services/battery-energy-storage"
+      />
+      <div ref={rootRef} className="bess-page">
       <style>{`
         .bess-page {
           --bg:#FBF6EC; --panel:#FFFFFF; --panel2:#FFFDF6;
@@ -934,6 +941,7 @@ export default function BESS() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

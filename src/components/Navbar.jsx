@@ -9,9 +9,9 @@ const navItems = [
     label: "Services",
     to: "/services",
     children: [
-      { label: "Low Voltage", to: "/lowvoltageconsultancy" },
-      { label: "Solar Grids", to: "/eldecsolarminigrids" },
-      { label: "Energy Storage", to: "/besspage" },
+      { label: "Low Voltage", to: "/services/low-voltage-consultancy" },
+      { label: "Solar Grids", to: "/services/solar-mini-grids" },
+      { label: "Energy Storage", to: "/services/battery-energy-storage" },
     ],
   },
   { label: "Contact", to: "/contact" },
